@@ -1,0 +1,30 @@
+{
+  "clusters": 2,
+  "confidence_interval": "two-sided 95% Student-t interval over paired seed deltas",
+  "families": 8,
+  "heldout_seeds_per_cell": 10,
+  "loads": 3,
+  "outputs": [
+    "cell_summary.csv",
+    "family_load_summary.csv",
+    "overall_load_summary.csv",
+    "paired_vs_binpack.csv",
+    "paired_family_load_vs_binpack.csv",
+    "paired_overall_load_vs_binpack.csv",
+    "plots/throughput_by_family_load.png",
+    "plots/p95_wait_by_family_load.png",
+    "plots/throughput_vs_active_nodes.png",
+    "plots/backlog_by_load.png"
+  ],
+  "phase": 4,
+  "policies": [
+    "binpack",
+    "spread",
+    "tetris",
+    "hybrid"
+  ],
+  "queue_discipline": "fifo_scan_backfill",
+  "raw_rows": 1920,
+  "source": "results/temporal/raw/final.csv",
+  "source_sha256": "8f46c90029b46ce23c23b22ca1b45a388628830bcea80d3b359b066a3090fcb1"
+}

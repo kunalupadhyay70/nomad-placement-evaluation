@@ -4,8 +4,11 @@ Phase 3 of nomad-placement-lab. Protocol, formulas, and metric
 definitions: `DESIGN.md`. Raw data: `results/matrix/*.csv`. Plots:
 `results/matrix/plots/*.png`. Reproduce with:
 
+This report is retained as the historical **Phase 3 admission study**. The
+completed lifecycle/throughput study is in `TEMPORAL_EXPERIMENT_REPORT.md`.
+
 ```bash
-python3 -m pytest                                             # 127 tests
+python3 -m pytest                                             # 170 current tests (127 at Phase 3 freeze)
 python3 scripts/run_matrix.py tune_cell {0..7}                # tuning shards (tune seeds 0-9)
 python3 scripts/run_matrix.py tune_select                     # -> tuning.csv, tuned.json
 python3 scripts/run_matrix.py val                             # -> val.csv (seeds 100-104)
@@ -15,7 +18,7 @@ python3 scripts/run_matrix.py sensitivity {0,1,2}             # -> sensitivity_*
 python3 scripts/analyze_matrix.py                             # tables + plots from CSVs
 ```
 
-Scope reminder: the simulator is admission-only (no durations, no
+Scope reminder: the Phase 3 runner is admission-only (no durations, no
 departures, no queue). Every number below is a placement/admission
 result on a 30-node cluster, not completed-job throughput.
 
@@ -161,18 +164,17 @@ well inside the pre-registered 5× bound.
    than seed noise on most cells, and the deterministic winner is
    already cheap and explainable. Rollout-teacher + MLP work should wait
    until durations/departures exist, where lookahead has real signal.
-5. **Open follow-ups**: durations + queue (turn admission into
-   throughput; revisit future-fit there), rollout policy E as a
-   lookahead baseline, a tiny exact-packing solver for optimality gaps,
-   and an active-node-aware objective that prices the consolidation loss
-   explicitly.
+5. **Follow-up status**: Phase 4 added durations, queueing, release, and
+   throughput for the four primary policies. Remaining follow-ups include
+   temporal EWMA sensitivity, strict-FIFO sensitivity, a tiny exact-packing
+   solver for optimality gaps, and an active-node-aware objective.
 
-## 6. Verified resume bullets
+## 6. Historical Phase 3 resume bullets
 
 - Built a deterministic Python simulator reproducing HashiCorp Nomad's CPU/RAM
   binpack and spread fit scoring, with immutable cluster state, seeded workload
-  generation, and 127 tests covering scoring, feasibility, determinism, and
-  experiment invariants.
+  generation, and 127 tests at the Phase 3 freeze covering scoring,
+  feasibility, determinism, and experiment invariants.
 - Evaluated 11 placement policies and ablations across 48 workload/cluster/load
   configurations and 10 held-out seeds, finding that Tetris-style resource
   alignment improved admission by 1.6–3.7 percentage points on four mixed-shape
@@ -184,4 +186,5 @@ well inside the pre-registered 5× bound.
 *(No claim of improving production Nomad; all results are simulation-
 scope, admission-only, and stated with their failure cases.)*
 
-The claim-to-artifact mapping is maintained in `docs/RESUME_EVIDENCE.md`.
+These are retained for provenance. Current approved bullets and the complete
+170-test evidence mapping are maintained in `docs/RESUME_EVIDENCE.md`.

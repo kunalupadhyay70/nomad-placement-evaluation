@@ -182,7 +182,7 @@ def write_temporal_csv(records: Sequence[TemporalRunRecord], path: str) -> None:
         raise ValueError("no temporal records to write")
     fieldnames = list(TemporalRunRecord.__dataclass_fields__)
     with open(path, "w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for record in records:
             writer.writerow({name: getattr(record, name) for name in fieldnames})

@@ -7,11 +7,48 @@ an executable check or generated artifact.
 
 ### Test suite
 
-- **127 tests pass.**
+- **170 tests pass: 127 preserved Phase 1–3 tests plus 43 Phase 4 tests.**
 - Evidence: `python -m pytest` release run and the `tests/` suite.
 - Coverage focus: Nomad formula boundaries, base-10 equivalence, feasibility
   filtering, immutable state, deterministic workload generation, tie behavior,
-  metrics, experimental policies, seed-split discipline, and paired statistics.
+  metrics, experimental policies, seed-split discipline, paired statistics,
+  lifecycle event ordering, queue/backfill behavior, exact release, horizon and
+  drain semantics, time-weighted metrics, and identical policy traces.
+
+### Temporal experiment design
+
+- **48 held-out temporal cells:** 8 workload families × 2 cluster types × 3
+  resource-time offered-load regions.
+- **10 held-out seeds per cell and four frozen primary policies.**
+- **1,920 held-out temporal policy runs:** 48 × 10 × 4.
+- Deterministic Poisson arrivals, independent `Uniform[8, 12]` durations, a
+  50-unit observation horizon, and exact completion-time resource release.
+- Evidence: `results/temporal/config.json`,
+  `results/temporal/canonical/manifest.json`, and
+  `results/temporal/raw/final.csv`.
+
+### Temporal result
+
+At overload (`rho=1.30`), Tetris versus Nomad-style binpack across 160 paired
+held-out traces:
+
+- completed **+0.256 jobs per simulated time unit** (95% CI
+  `[+0.192, +0.321]`), a **1.38%** gain over binpack's 18.563;
+- left **9.41 fewer jobs queued** at the horizon;
+- used **1.19 more time-weighted active nodes**;
+- increased drained-job P95 waiting by **0.53 simulated time units**.
+
+The qualification is essential: low-load throughput was identical, and near
+saturation Tetris was `-0.036` jobs/time unit (95% CI
+`[-0.063, -0.009]`). The clear high-load family gains were RAM-heavy, bimodal,
+tiny/large, drift, and adversarial. Evidence:
+`results/temporal/canonical/paired_overall_load_vs_binpack.csv` and
+`paired_family_load_vs_binpack.csv`.
+
+The high-load hybrid provided a limited compromise versus binpack: +0.162
+jobs/time unit (95% CI `[+0.112, +0.211]`) for +0.86 time-weighted active
+nodes, versus Tetris's +0.256 throughput and +1.19 nodes. It still increased
+P95 wait.
 
 ### Experiment design
 
@@ -89,22 +126,26 @@ improved admission in several mixed workloads but consolidated less strongly.
 
 ## Approved resume bullets
 
-- Built a deterministic Python simulator reproducing HashiCorp Nomad's CPU/RAM
-  binpack and spread fit scoring, with immutable cluster state, seeded workload
-  generation, and 127 tests covering scoring, feasibility, determinism, and
-  experiment invariants.
-- Evaluated 11 placement policies and ablations across 48 workload/cluster/load
-  configurations and 10 held-out seeds, finding that Tetris-style resource
-  alignment improved admission by 1.6–3.7 percentage points on four mixed-shape
-  workloads.
-- Quantified the admission–consolidation trade-off (29.4 active nodes for
-  Tetris vs. 23.0 for binpack on 30-node clusters) and found that EWMA-based
-  demand prediction added no material gain over the simpler stateless heuristic.
+- Built a deterministic event-driven Python scheduler simulator reproducing a
+  pinned HashiCorp Nomad CPU/RAM fit score, with Poisson arrivals, job
+  completion/resource release, FIFO-scan backfilling, horizon/drain metrics,
+  and 170 tests covering scoring and lifecycle invariants.
+- Executed 1,920 paired held-out temporal runs across 48 workload/cluster/load
+  cells, finding Tetris increased overload throughput by 1.38% (95% CI
+  1.03–1.73%) while using 1.19 more time-weighted active nodes and increasing
+  P95 wait by 0.53 simulated time units.
+- Quantified a load-dependent result: resource-shape alignment added no
+  low-load throughput, slightly reduced near-saturation throughput overall,
+  and improved overload throughput most on mixed, drifting, and adversarial
+  request shapes.
 
 ## Do not claim
 
 - production Nomad was modified or improved;
-- throughput, jobs/second, queueing latency, or completion time was measured;
+- simulated throughput or waiting time is production throughput/latency;
 - Tetris is always better;
 - full-scan greedy placement is an oracle or global optimum;
 - the synthetic results establish production impact.
+
+The Phase 3 admission and EWMA bullets remain supported historical alternatives,
+but do not combine their admission numbers with Phase 4 throughput wording.

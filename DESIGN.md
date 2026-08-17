@@ -5,14 +5,19 @@ control used in the Phase-3 matrix study. Code: `sim/experimental.py`,
 `sim/profile.py`, `sim/families.py`, `sim/matrix.py`,
 `scripts/run_matrix.py`, `scripts/analyze_matrix.py`.
 
+This is intentionally the historical **Phase 3 static design**. Phase 4 now
+adds a separate lifecycle runner; see `docs/TEMPORAL_DESIGN.md` and
+`TEMPORAL_EXPERIMENT_REPORT.md`.
+
 ## 0. Scope and simulator state
 
-The simulator is **admission-only**: jobs arrive in sequence, are placed
+The Phase 3 runner is **admission-only**: jobs arrive in sequence, are placed
 greedily or rejected, and never depart. There are **no arrival times, no
 durations, no completions, and no waiting queue**. Consequently every
 "admission rate" below is a placement/admission measure and must NOT be
-read as completed-job throughput; throughput requires durations and
-departures (future phase). Real Nomad details not modeled: constraints,
+read as completed-job throughput. Durations and departures are implemented in
+the separate Phase 4 runner, not retrofitted into these numbers. Real Nomad
+details not modeled: constraints,
 affinities, devices, networks, preemption, candidate sampling, reserved
 resources (modeled as 0). The Nomad fit formulas themselves are verified
 against `hashicorp/nomad` commit

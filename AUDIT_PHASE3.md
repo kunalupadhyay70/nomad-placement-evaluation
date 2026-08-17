@@ -18,11 +18,10 @@ nothing working was rewritten. Findings:
    (reserved modeled as 0 here) on post-placement utilization, which
    `sim/scheduler.py` mirrors. The convex score is not
    fragmentation-blind and is never described as such.
-2. **No arrival times, durations, completions, or queue existed** (still
-   true after Phase 3, by scope decision). All results are therefore
-   admission-rate results and are labeled as such everywhere;
-   completed-job throughput is explicitly out of scope until a
-   durations phase.
+2. **No arrival times, durations, completions, or queue existed** (true at the
+   Phase 3 freeze, by scope decision). Those results remain admission-only.
+   Phase 4 later implemented the separate temporal lifecycle and throughput
+   study documented in `TEMPORAL_EXPERIMENT_REPORT.md`.
 3. **Missing pieces** (implemented in Phase 3): experimental policies
    (alignment, hybrid, mismatch-penalty, future-fit), EWMA workload
    profile, multi-seed experiment matrix, seed discipline, paired

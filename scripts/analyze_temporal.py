@@ -70,7 +70,11 @@ def _write_csv(path: Path, rows: Sequence[dict[str, object]]) -> None:
     if not rows:
         raise ValueError(f"no rows for {path}")
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(rows[0]),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 

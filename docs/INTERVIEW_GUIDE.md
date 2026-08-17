@@ -5,12 +5,12 @@ with the technical detail only when the interviewer asks.
 
 ## Thirty-second explanation
 
-I built a deterministic online CPU/RAM placement simulator to isolate
-HashiCorp Nomad's fit-scoring heuristic. I compared Nomad-style bin packing
-with resource-shape-aware policies on paired seeded workloads. Tetris-style
-alignment admitted 1.6–3.7 percentage points more requests on four mixed-shape
-workloads, but used about six more nodes on average; a more complex EWMA
-prediction extension added no material benefit.
+I built a deterministic event-driven CPU/RAM scheduler simulator around a
+pinned HashiCorp Nomad fit score. Jobs arrive, wait, run, complete, and release
+their exact allocations. In 1,920 paired held-out temporal runs, Tetris improved
+overload throughput by 1.38% but used 1.19 more active nodes and increased P95
+wait; at low load it added no throughput, and near saturation it was slightly
+worse. The honest result is a load-dependent trade-off, not a universal win.
 
 ## Basics
 
@@ -52,17 +52,21 @@ dispersion metric, and a stranded-capacity measure with explicit definitions.
 Admission rate is `requests placed / requests submitted`. A rejected request
 fits on no candidate under the current residual cluster state.
 
-It is not throughput: jobs have no duration, completion, or resource release,
-so the simulator cannot measure completed work per unit time.
+That remains the Phase 3 metric. Phase 4 separately adds arrival times,
+durations, completion/release, a waiting queue, horizon throughput, and drained
+latency. The two experiments are not relabelled or pooled.
 
 ## What I implemented
 
 ### What exactly did you build?
 
-I built an online sequential two-resource placement simulator with immutable
-node/job models, feasibility filtering, pluggable scoring policies, seeded
-cluster and workload generation, detailed and lean experiment runners,
-paired statistics, CSV artifacts, and reproducible plots.
+I built two compatible modes: the original online sequential admission
+simulator and an additive event-driven lifecycle runner. Both use immutable
+node/job models, feasibility filtering, pluggable scoring, seeded immutable
+traces, paired statistics, validated CSV artifacts, and reproducible plots.
+The temporal mode adds completion ordering, exact release, FIFO-scan
+backfilling, a job ledger, horizon snapshots, drain mode, and time-weighted
+metrics.
 
 ### Did you modify Nomad itself?
 
@@ -98,6 +102,49 @@ Synthetic families let me vary size, shape, order, cluster heterogeneity, and
 offered load independently. That supports mechanism testing. They are not
 claimed to represent every production trace; trace-driven replay is a logical
 next validation step.
+
+### How does the temporal event loop work?
+
+At the same timestamp, I complete and release running jobs first, register
+arrivals in stable order second, and dispatch the queue third. Completion-first
+means a new arrival can use resources released at that exact time. Completion
+events use completion time, start order, and job ID as stable keys, so results
+do not depend on dictionary ordering.
+
+The queue discipline is FIFO-order scan with backfilling. I consider jobs in
+arrival order, leave currently blocked jobs waiting, and allow a later job to
+start if it fits. It avoids strict head-of-line blocking but can increase tail
+wait for older awkward jobs. There is no preemption or migration.
+
+### How do you know resource release is correct?
+
+Every live allocation records its original node and exact CPU/RAM demand.
+Completion subtracts those values from that node. At each checked event
+boundary, the runner reconciles live allocations against node usage and checks
+capacity bounds. A full drain must return the cluster to its initial
+used-resource baseline. Hand-worked tests cover heterogeneous nodes and
+simultaneous completions.
+
+### What is temporal offered load?
+
+I derive arrival rate from resource-time demand, not a job-count label:
+
+```text
+rho = max(lambda * E[cpu * duration] / total_cpu,
+          lambda * E[ram * duration] / total_ram)
+```
+
+Tuning seeds froze `rho=0.70`, `1.00`, and `1.30` as underload, saturation,
+and overload before held-out execution. Arrivals are Poisson and durations are
+bounded `Uniform[8,12]` so accidental extreme durations cannot dominate.
+
+### How are unfinished jobs handled?
+
+At time 50 I report completed, running, queued, and permanently infeasible
+counts without pretending unfinished jobs completed. Then I stop arrivals and
+optionally drain all feasible work. Horizon throughput uses completions by time
+50; wait, turnaround, slowdown, and makespan use the drained ledger so those
+samples are uncensored. P95 is deterministic nearest-rank.
 
 ## Algorithms
 
@@ -185,8 +232,9 @@ Nomad's candidate sampling.
 
 Each `(family, cluster, load, seed)` creates one immutable `Trace`. Every policy
 starts from the same cluster and receives the identical request sequence and
-arrival order. Stateful policies get a fresh instance for every run. Tests
-verify determinism and no cross-policy mutation.
+arrival order. The Phase 4 trace also fixes arrivals and durations. Stateful
+policies get a fresh instance for every run. Tests verify determinism, shared
+trace metadata, and no cross-policy mutation.
 
 ### Why multiple seeds?
 
@@ -202,30 +250,41 @@ runner refuses to run an improperly marked tunable policy on the test split.
 
 ### What were the experiment dimensions?
 
-The held-out study has 8 workload families × 2 cluster configurations × 3 load
-levels = 48 cells, with 10 test seeds and 11 policies/ablations. That produces
-5,280 held-out policy runs.
+Phase 4 has 8 workload families × 2 cluster configurations × 3 resource-time
+load levels = 48 cells, with 10 test seeds and four pre-frozen policies. That
+produces 1,920 held-out temporal runs. Phase 3 separately has 11 policies and
+5,280 held-out admission-only runs.
 
 ### What statistics did you use?
 
-The primary comparison is the paired per-trace admission difference between a
-candidate and binpack. Reports include mean difference, standard deviation,
-95% paired t-interval, and wins/losses/ties. Per-family results pool 60 paired
-observations: two clusters × three loads × ten seeds.
+The primary comparison is a paired per-trace policy difference against binpack.
+Phase 4 reports throughput, drained P95 wait, horizon backlog, utilization, and
+time-weighted active nodes with mean, dispersion, and two-sided 95% paired
+t-intervals. Each family/load statistic pools 20 pairs; each overall-load
+statistic pools 160. Phase 3 uses the same paired idea for admission.
 
 ### How did Tetris perform?
 
-It improved mean admission by 1.6–3.7 percentage points on bimodal, tiny/large,
-drift, and adversarial mixed-shape families; those paired intervals excluded
-zero. It was 0.23 points lower on CPU-heavy workloads, with an interval that
-included zero. It is not always better.
+At overload it completed 0.256 more jobs per simulated time unit than binpack
+(95% CI `[+0.192, +0.321]`), or +1.38%. The clear gains were RAM-heavy,
+bimodal, tiny/large, drift, and adversarial. At low load throughput was
+identical. Near saturation Tetris was 0.036 lower overall (95% CI
+`[-0.063, -0.009]`), with drift the positive exception. It is not always
+better.
+
+Phase 3 separately found 1.6–3.7 percentage-point admission gains on four
+mixed-shape families. Phase 4 shows that this mechanism translates to
+throughput only under some loads and shapes.
 
 ### What is the consolidation trade-off?
 
-Across all held-out traces, binpack used 23.0 of 30 nodes on average and Tetris
-used 29.4. Tetris admitted more in several mixed workloads, while binpack left
-more whole nodes idle. The right objective depends on whether future
-schedulability or consolidation is more valuable.
+In Phase 4, Tetris used 5.92, 1.62, and 1.19 more time-weighted active nodes at
+low, medium, and high load. Its high-load throughput improved, but drained P95
+wait also rose by 0.53. The frozen hybrid retained a smaller high-load gain of
+0.162 jobs/time unit for a smaller +0.86-node cost.
+
+Phase 3's static endpoint showed the same direction more strongly: 29.4 active
+nodes for Tetris versus 23.0 for binpack.
 
 ### What did the EWMA profile predict?
 
@@ -241,12 +300,16 @@ The stateless Tetris term captured the mixed-workload gains, while the learned
 distribution rarely changed the selected node enough to improve admission.
 This made added state, tuning, and scoring cost unjustified in this model.
 
+That is a Phase 3 admission result. EWMA/future-fit was not included in the
+four-policy temporal matrix, so I do not claim the temporal result is null.
+
 ### Did you cherry-pick the best policy?
 
-No. The final matrix includes baselines, tuned policies, future-fit variants,
-and ablations on disjoint test seeds. The report retains CPU-heavy losses and
-the prediction null result. The selected parameters and raw per-run records are
-saved.
+No. Temporal policies and load regions were frozen on tuning seeds before the
+held-out run. The report retains zero low-load gains, near-saturation losses,
+higher P95 wait, and workloads whose intervals cross zero. All 1,920 raw
+per-run records are retained. Phase 3 separately retains baselines, future-fit
+variants, and ablations.
 
 ## Critical questions
 
@@ -278,10 +341,10 @@ Their purpose is causal stress testing; real traces are future validation.
 
 ### What would happen with job completion?
 
-Departures would continually reshape free capacity and could reduce or reverse
-the advantage observed in a monotonically filling cluster. They would also make
-forecasting more meaningful because future availability would depend on both
-arrivals and departures. The current study cannot answer this.
+Phase 4 answers this controlled version: completion and exact release make the
+Phase 3 advantage load-dependent. Low-load throughput ties, Tetris is slightly
+worse near saturation overall, and it wins under overload on five shaped/mixed
+families. Departures did not simply preserve or erase the earlier result.
 
 ### What about GPUs, network, storage, and constraints?
 
@@ -292,15 +355,16 @@ the isolated fit-score effect.
 
 ### What is the biggest limitation?
 
-No durations or resource release. The cluster only fills, so the result is an
-admission study under sequential arrivals, not a steady-state scheduler model.
+The lifecycle is controlled rather than trace-calibrated: Poisson arrivals,
+bounded durations, one queue discipline, and a finite 50-unit horizon. That is
+good for isolating a mechanism but does not prove long-run stability or
+production Nomad impact.
 
 ### What would you do with another month?
 
-1. Add seeded durations, completion events, resource release, and a queue while
-   preserving paired trace replay.
-2. Calibrate workload distributions from an anonymized real trace.
+1. Replay anonymized production-like arrival, duration, and resource traces.
+2. Add strict FIFO and age-aware sensitivity checks for tail-wait fairness.
 3. Add bounded candidate evaluation as an explicit experimental factor.
-4. Evaluate a multi-objective score that prices active nodes and admission.
+4. Evaluate a pre-frozen multi-objective score for throughput, tail wait, and
+   active nodes.
 5. Only then prototype the strongest simple policy against real Nomad.
-
