@@ -1,9 +1,11 @@
 {
+  "aggregation": "equal-weight macro-average over predeclared workload-family and cluster strata within each seed",
   "clusters": 2,
-  "confidence_interval": "two-sided 95% Student-t interval over paired seed deltas",
+  "confidence_interval": "two-sided 95% Student-t interval over 10 seed-block macro-averages (df=9)",
   "families": 8,
   "heldout_seeds_per_cell": 10,
   "loads": 3,
+  "multiple_comparisons": "family-level intervals are exploratory and are not adjusted for multiple comparisons",
   "outputs": [
     "cell_summary.csv",
     "family_load_summary.csv",
@@ -16,6 +18,7 @@
     "plots/throughput_vs_active_nodes.png",
     "plots/backlog_by_load.png"
   ],
+  "p95_aggregation": "macro-average of per-run nearest-rank drained-job P95 values; jobs are not pooled across runs",
   "phase": 4,
   "policies": [
     "binpack",

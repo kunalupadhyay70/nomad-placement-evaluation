@@ -8,7 +8,7 @@ This report is retained as the historical **Phase 3 admission study**. The
 completed lifecycle/throughput study is in `TEMPORAL_EXPERIMENT_REPORT.md`.
 
 ```bash
-python3 -m pytest                                             # 170 current tests (127 at Phase 3 freeze)
+python3 -m pytest                                             # 171 current tests (127 at Phase 3 freeze)
 python3 scripts/run_matrix.py tune_cell {0..7}                # tuning shards (tune seeds 0-9)
 python3 scripts/run_matrix.py tune_select                     # -> tuning.csv, tuned.json
 python3 scripts/run_matrix.py val                             # -> val.csv (seeds 100-104)
@@ -187,4 +187,4 @@ well inside the pre-registered 5× bound.
 scope, admission-only, and stated with their failure cases.)*
 
 These are retained for provenance. Current approved bullets and the complete
-170-test evidence mapping are maintained in `docs/RESUME_EVIDENCE.md`.
+171-test evidence mapping are maintained in `docs/RESUME_EVIDENCE.md`.

@@ -80,8 +80,8 @@ def _write_csv(path: Path, rows: Sequence[dict[str, object]]) -> None:
 
 
 def _t_critical_95(n: int) -> float:
-    # Exact two-sided Student-t values for the sample sizes emitted here.
-    exact = {10: 2.262157, 20: 2.093024, 160: 1.975092}
+    # Exact two-sided Student-t value for the ten predeclared seed blocks.
+    exact = {10: 2.2621571627409915}
     if n in exact:
         return exact[n]
     if n >= 30:
@@ -185,8 +185,15 @@ def _summary(
         group = grouped[group_key]
         output: dict[str, object] = dict(zip(key_names, group_key))
         output["n_runs"] = len(group)
+        output["n_seed_blocks"] = len({row.seed for row in group})
         for name, getter in METRICS:
-            mean, sd, low, high = _stats([getter(row) for row in group])
+            by_seed: dict[int, list[float]] = defaultdict(list)
+            for row in group:
+                by_seed[row.seed].append(getter(row))
+            if set(by_seed) != set(TEST_SEEDS):
+                raise ValueError(f"summary seed-block mismatch: {group_key}")
+            seed_blocks = [statistics.fmean(by_seed[seed]) for seed in TEST_SEEDS]
+            mean, sd, low, high = _stats(seed_blocks)
             output[f"mean_{name}"] = _fmt(mean)
             output[f"sd_{name}"] = _fmt(sd)
             output[f"ci95_low_{name}"] = _fmt(low)
@@ -214,6 +221,7 @@ def _paired(records: Sequence[TemporalRunRecord]) -> list[dict[str, object]]:
                         "policy": policy,
                         "baseline": "binpack",
                         "n_pairs": len(TEST_SEEDS),
+                        "n_seed_blocks": len(TEST_SEEDS),
                     }
                     for name, getter in METRICS:
                         deltas = []
@@ -242,9 +250,9 @@ def _paired_aggregate(
         (row.family, row.cluster_config, row.load, row.policy, row.seed): row
         for row in records
     }
-    grouped: dict[
-        tuple[str, ...], dict[str, list[float]]
-    ] = defaultdict(lambda: defaultdict(list))
+    grouped: dict[tuple[str, ...], dict[str, dict[int, list[float]]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(list))
+    )
     for row in records:
         if row.policy == "binpack":
             continue
@@ -253,17 +261,25 @@ def _paired_aggregate(
         ]
         group_key = (*key(row), row.policy)
         for name, getter in METRICS:
-            grouped[group_key][name].append(getter(row) - getter(baseline))
+            grouped[group_key][name][row.seed].append(
+                getter(row) - getter(baseline)
+            )
 
     output_rows: list[dict[str, object]] = []
     for group_key in sorted(grouped):
         output: dict[str, object] = dict(zip((*key_names, "policy"), group_key))
         output["baseline"] = "binpack"
         samples = grouped[group_key]
-        output["n_pairs"] = len(next(iter(samples.values())))
+        first_metric = next(iter(samples.values()))
+        output["n_pairs"] = sum(len(values) for values in first_metric.values())
+        output["n_seed_blocks"] = len(first_metric)
         for name, _ in METRICS:
-            values = samples[name]
-            mean, sd, low, high = _stats(values)
+            by_seed = samples[name]
+            if set(by_seed) != set(TEST_SEEDS):
+                raise ValueError(f"paired seed-block mismatch: {group_key}")
+            values = [value for seed in TEST_SEEDS for value in by_seed[seed]]
+            seed_blocks = [statistics.fmean(by_seed[seed]) for seed in TEST_SEEDS]
+            mean, sd, low, high = _stats(seed_blocks)
             output[f"mean_delta_{name}"] = _fmt(mean)
             output[f"sd_delta_{name}"] = _fmt(sd)
             output[f"ci95_low_delta_{name}"] = _fmt(low)
@@ -327,7 +343,12 @@ def _facet_plot(
         ncol=4,
         frameon=False,
     )
-    fig.text(0.5, 0.015, "offered-load region (20 held-out runs per point; bars are 95% t CIs)", ha="center")
+    fig.text(
+        0.5,
+        0.015,
+        "offered-load region (20 runs; bars are 95% t CIs over 10 seed blocks)",
+        ha="center",
+    )
     fig.tight_layout(rect=(0, 0.04, 1, 0.90))
     fig.savefig(PLOTS / filename, dpi=160)
     plt.close(fig)
@@ -367,7 +388,10 @@ def _tradeoff_plot(overall_rows: Sequence[dict[str, object]]) -> None:
         ax.plot([], [], marker="o", linestyle="", color=COLORS[policy], label=policy)
     ax.set_xlabel("time-weighted active nodes")
     ax.set_ylabel("completed jobs per simulated time unit")
-    ax.set_title("Temporal throughput–consolidation trade-off\n(160 held-out runs per policy/load point)")
+    ax.set_title(
+        "Temporal throughput–consolidation trade-off\n"
+        "(160 runs; 95% t CIs over 10 seed blocks)"
+    )
     ax.grid(alpha=0.2)
     ax.legend(frameon=False, ncol=2)
     fig.tight_layout()
@@ -401,7 +425,10 @@ def _backlog_plot(overall_rows: Sequence[dict[str, object]]) -> None:
     ax.set_xticks(x, LOADS)
     ax.set_xlabel("offered-load region")
     ax.set_ylabel("mean jobs queued at observation horizon")
-    ax.set_title("Backlog growth by offered load\n(160 held-out runs per policy/load point)")
+    ax.set_title(
+        "Backlog growth by offered load\n"
+        "(160 runs; 95% t CIs over 10 seed blocks)"
+    )
     ax.grid(alpha=0.2)
     ax.legend(frameon=False, ncol=4)
     fig.tight_layout()
@@ -481,7 +508,22 @@ def main() -> None:
         "heldout_seeds_per_cell": len(TEST_SEEDS),
         "policies": list(POLICIES),
         "queue_discipline": "fifo_scan_backfill",
-        "confidence_interval": "two-sided 95% Student-t interval over paired seed deltas",
+        "confidence_interval": (
+            "two-sided 95% Student-t interval over 10 seed-block "
+            "macro-averages (df=9)"
+        ),
+        "aggregation": (
+            "equal-weight macro-average over predeclared workload-family and "
+            "cluster strata within each seed"
+        ),
+        "p95_aggregation": (
+            "macro-average of per-run nearest-rank drained-job P95 values; "
+            "jobs are not pooled across runs"
+        ),
+        "multiple_comparisons": (
+            "family-level intervals are exploratory and are not adjusted for "
+            "multiple comparisons"
+        ),
         "outputs": [
             "cell_summary.csv",
             "family_load_summary.csv",

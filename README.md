@@ -6,7 +6,8 @@ controlled synthetic workloads.
 
 The main result is a trade-off, not a universal winner. In the new event-driven
 study, Tetris improved overload throughput by **0.256 completed jobs per
-simulated time unit** versus binpack (95% paired CI `[+0.192, +0.321]`, +1.38%)
+simulated time unit** versus binpack (95% seed-blocked paired CI
+`[+0.201, +0.312]`, +1.38%)
 but used **1.19 more time-weighted active nodes** and increased drained-job P95
 wait by **0.53 time units**. It did not improve throughput at low load and was
 slightly worse near saturation overall.
@@ -148,8 +149,8 @@ Across 160 held-out traces per policy/load, Tetris versus binpack produced:
 | Load | Throughput delta (95% CI) | P95-wait delta | Backlog delta | Active-node delta |
 |---|---:|---:|---:|---:|
 | low | 0.000 `[0.000, 0.000]` | +0.127 | +0.01 | +5.92 |
-| medium | -0.036 `[-0.063, -0.009]` | +0.690 | +2.19 | +1.62 |
-| high | +0.256 `[+0.192, +0.321]` | +0.529 | -9.41 | +1.19 |
+| medium | -0.036 `[-0.053, -0.019]` | +0.690 | +2.19 | +1.62 |
+| high | +0.256 `[+0.201, +0.312]` | +0.529 | -9.41 | +1.19 |
 
 At high load, the clear family-level Tetris gains were RAM-heavy, bimodal,
 tiny/large, drift, and adversarial; balanced, CPU-heavy, and corrupted-signal
@@ -158,7 +159,7 @@ families, while drift was a clear positive exception. Low-load throughput was
 identical for all policies.
 
 The hybrid was a limited high-load compromise: +0.162 jobs/time unit over
-binpack (95% CI `[+0.112, +0.211]`) with +0.86 active nodes, compared with
+binpack (95% CI `[+0.127, +0.196]`) with +0.86 active nodes, compared with
 Tetris's +0.256 throughput and +1.19 nodes. Tail wait still increased. See the
 [complete Phase 4 report](TEMPORAL_EXPERIMENT_REPORT.md) and citable artifacts
 in [`results/temporal/canonical/`](results/temporal/canonical/).
@@ -219,21 +220,25 @@ Full statistics, ablations, and sensitivity results are in
 
 ## Reproduce
 
-Python 3.10+ is required.
+Python 3.12 is the audited byte-reproduction environment. The project supports
+Python 3.10+ through the bounded ranges in `requirements.txt`, but exact plot
+bytes can vary with dependency versions.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-lock.txt
 
 python -m pytest
 python scripts/run_temporal_smoke.py
 python scripts/analyze_temporal.py
+python scripts/verify_temporal_stats.py
 ```
 
-Those three commands verify the suite, exercise the lifecycle with invariant
-checks, and regenerate canonical Phase 4 tables/plots from the retained raw
-held-out CSV. The temporal smoke JSON is deterministic and byte-stable.
+Those commands verify the suite, exercise the lifecycle with invariant checks,
+regenerate canonical Phase 4 tables/plots, and independently recompute the raw
+matrix integrity and headline statistics. The temporal smoke JSON is
+deterministic and byte-stable.
 
 To rerun all 1,920 Phase 4 held-out policy runs:
 
@@ -277,8 +282,9 @@ The full tuning protocol and commands are documented in
 
 ## Tests
 
-The release suite has **170 passing tests**: the original 127 plus 43 focused
-temporal, workload, and matrix tests. High-risk invariants include:
+The audited release suite has **171 passing tests**: the original 127, 43
+focused temporal/workload/matrix tests, and one final seed-block statistics
+regression test. High-risk invariants include:
 
 - exact Nomad score boundaries and tunable-base equivalence;
 - feasibility before scoring and no over-capacity placement;

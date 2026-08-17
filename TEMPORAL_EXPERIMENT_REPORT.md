@@ -6,13 +6,14 @@ The Phase 3 admission advantage translated into higher completed-job
 throughput only under overload and only for some workload shapes. Across 160
 paired held-out traces at `rho=1.30`, Tetris completed **0.256 jobs per
 simulated time unit more than Nomad-style binpack** (95% paired CI
-`[+0.192, +0.321]`), a **1.38%** increase over binpack's 18.563. It also used
+over ten seed blocks `[+0.201, +0.312]`), a **1.38%** increase over binpack's
+18.563. It also used
 **1.19 more time-weighted active nodes** and increased drained-job P95 waiting
 by **0.53 time units**.
 
 At underload, all policies had identical throughput. Near saturation, Tetris
 was slightly worse overall: `-0.036` jobs/time unit (95% CI
-`[-0.063, -0.009]`) and `+0.69` P95 wait. The result is therefore a
+`[-0.053, -0.019]`) and `+0.69` P95 wait. The result is therefore a
 load-dependent throughput–consolidation–fairness trade-off, not a universal
 Tetris win.
 
@@ -63,9 +64,13 @@ The held-out primary matrix contains:
 
 Cell summaries contain 10 runs. Family/load summaries contain 20 runs (two
 clusters × ten seeds). Overall load summaries contain 160 runs (eight families
-× two clusters × ten seeds). Policy deltas use paired traces and two-sided 95%
-Student-t intervals. A confidence interval crossing zero is treated as no
-clear difference.
+× two clusters × ten seeds). Policy deltas are paired within each trace. For
+aggregate intervals, paired deltas are macro-averaged over the predeclared
+workload/cluster strata within each seed, followed by a two-sided 95%
+Student-t interval over ten seed blocks (`df=9`). This avoids treating repeated
+measurements with the same seed as independent. P95 rows macro-average each
+run's nearest-rank drained-job P95; they do not pool individual jobs across
+runs. A confidence interval crossing zero is treated as no clear difference.
 
 ## Results by offered load
 
@@ -86,22 +91,23 @@ Means below pool 160 held-out runs per policy/load point.
 | high | Tetris | 18.819 | 19.318 | 273.19 | 29.31 |
 | high | hybrid | 18.725 | 19.104 | 275.98 | 28.97 |
 
-Low-load throughput equality is expected: arrivals clear, and requests near
-the horizon are still running rather than counted as completed. Medium has a
-meaningful boundary backlog and is best described as near saturation. High is
-overloaded: its large horizon backlog and time-weighted queue show accumulation
-over the finite window. This experiment does not prove asymptotic queue
-stability, but the low/high contrast is clear.
+Low-load queues are nearly empty at the horizon, and all policies produce the
+same completion count on each paired trace. Requests still running at the
+horizon are not counted as completed. Medium has a meaningful boundary backlog
+and is best described as near saturation. High is overloaded: its large
+horizon backlog and time-weighted queue show accumulation over the finite
+window. This experiment does not prove asymptotic queue stability, but the
+low/high contrast is clear.
 
 ### Paired differences versus binpack
 
 | Load | Policy | Throughput delta (95% CI) | P95-wait delta (95% CI) | Backlog delta | Active-node delta |
 |---|---|---:|---:|---:|---:|
-| low | Tetris | 0.000 `[0.000, 0.000]` | +0.127 `[+0.077, +0.176]` | +0.01 | +5.92 |
-| medium | Tetris | -0.036 `[-0.063, -0.009]` | +0.690 `[+0.544, +0.837]` | +2.19 | +1.62 |
-| high | Tetris | +0.256 `[+0.192, +0.321]` | +0.529 `[+0.329, +0.728]` | -9.41 | +1.19 |
-| high | spread | +0.115 `[+0.060, +0.169]` | +0.328 `[+0.174, +0.482]` | -4.91 | +1.55 |
-| high | hybrid | +0.162 `[+0.112, +0.211]` | +0.315 `[+0.156, +0.474]` | -6.61 | +0.86 |
+| low | Tetris | 0.000 `[0.000, 0.000]` | +0.127 `[+0.089, +0.164]` | +0.01 | +5.92 |
+| medium | Tetris | -0.036 `[-0.053, -0.019]` | +0.690 `[+0.501, +0.880]` | +2.19 | +1.62 |
+| high | Tetris | +0.256 `[+0.201, +0.312]` | +0.529 `[+0.304, +0.754]` | -9.41 | +1.19 |
+| high | spread | +0.115 `[+0.072, +0.157]` | +0.328 `[+0.191, +0.465]` | -4.91 | +1.55 |
+| high | hybrid | +0.162 `[+0.127, +0.196]` | +0.315 `[+0.072, +0.557]` | -6.61 | +0.86 |
 
 At high load, Tetris obtains the largest overall throughput gain and the
 lowest backlog, but not the lowest tail wait. A lower horizon backlog and a
@@ -113,7 +119,7 @@ The high-load hybrid is a measurable compromise. Relative to Tetris it gives
 up 0.095 jobs/time unit, but uses 0.34 fewer time-weighted active nodes and has
 0.21 time units lower P95 wait. It still outperforms binpack on high-load
 throughput. Near saturation, hybrid throughput is indistinguishable from
-binpack (`+0.001`, 95% CI `[-0.022, +0.024]`) while using 1.19 more active
+binpack (`+0.001`, 95% CI `[-0.019, +0.021]`) while using 1.19 more active
 nodes, so the compromise is not uniformly worthwhile.
 
 ![P95 wait by workload and load](results/temporal/canonical/plots/p95_wait_by_family_load.png)
@@ -122,18 +128,19 @@ nodes, so the compromise is not uniformly worthwhile.
 
 Low-load throughput was identical for every family. The table gives paired
 Tetris-minus-binpack throughput at medium and high loads, pooled over both
-clusters (20 paired traces per cell).
+clusters (20 paired traces per cell and ten seed blocks). These family-level
+intervals are exploratory and unadjusted for multiple comparisons.
 
 | Family | Medium delta (95% CI) | High delta (95% CI) |
 |---|---:|---:|
-| balanced | -0.073 `[-0.106, -0.040]` | +0.090 `[-0.013, +0.193]` |
-| CPU-heavy | -0.075 `[-0.101, -0.049]` | +0.022 `[-0.047, +0.091]` |
-| RAM-heavy | -0.046 `[-0.080, -0.012]` | +0.114 `[+0.042, +0.186]` |
-| bimodal | -0.054 `[-0.077, -0.031]` | +0.128 `[+0.045, +0.211]` |
-| tiny/large | -0.068 `[-0.096, -0.040]` | +0.261 `[+0.131, +0.391]` |
-| drift | +0.282 `[+0.183, +0.381]` | +0.810 `[+0.575, +1.045]` |
-| corrupted prediction signal | -0.071 `[-0.110, -0.032]` | -0.004 `[-0.048, +0.040]` |
-| adversarial order | -0.182 `[-0.282, -0.082]` | +0.630 `[+0.377, +0.883]` |
+| balanced | -0.073 `[-0.105, -0.041]` | +0.090 `[-0.026, +0.206]` |
+| CPU-heavy | -0.075 `[-0.103, -0.047]` | +0.022 `[-0.074, +0.118]` |
+| RAM-heavy | -0.046 `[-0.083, -0.009]` | +0.114 `[+0.049, +0.179]` |
+| bimodal | -0.054 `[-0.080, -0.028]` | +0.128 `[+0.051, +0.205]` |
+| tiny/large | -0.068 `[-0.099, -0.037]` | +0.261 `[+0.114, +0.408]` |
+| drift | +0.282 `[+0.187, +0.377]` | +0.810 `[+0.549, +1.071]` |
+| corrupted prediction signal | -0.071 `[-0.115, -0.027]` | -0.004 `[-0.046, +0.038]` |
+| adversarial order | -0.182 `[-0.225, -0.139]` | +0.630 `[+0.333, +0.927]` |
 
 The clear high-load Tetris gains occur on RAM-heavy, bimodal, tiny/large,
 drift, and adversarial families. Balanced, CPU-heavy, and corrupted-signal
@@ -156,9 +163,9 @@ create placement choices, especially under pressure.
 5. **Was hybrid a better compromise?** At high load, yes in a limited sense:
    less throughput than Tetris but fewer active nodes and lower P95 wait. At
    medium load it offered no clear throughput gain over binpack.
-6. **Was each load stable?** Low cleared; medium was boundary/backlogged; high
-   accumulated a large queue. Finite-horizon results do not prove asymptotic
-   stability.
+6. **Was each load stable?** Low had near-zero horizon backlog; medium was
+   boundary/backlogged; high accumulated a large queue. Finite-horizon results
+   do not prove asymptotic stability.
 7. **Does the EWMA null result remain?** Phase 3's admission-only null result
    remains valid historical evidence. EWMA/future-fit was deliberately not
    added to the primary temporal matrix, so no temporal EWMA claim is made.
@@ -167,7 +174,8 @@ create placement choices, especially under pressure.
 
 ## Reproduction
 
-From the repository root with dependencies installed:
+From the repository root with Python 3.12 and the audited lock installed
+(`python -m pip install -r requirements-lock.txt`):
 
 ```bash
 python -m pytest
@@ -199,5 +207,8 @@ the simulation.
   older-job tail latency; strict FIFO sensitivity was not run.
 - Confidence intervals quantify variation over the selected seeded synthetic
   traces, not every possible workload or production deployment.
+- Family-level intervals are exploratory and unadjusted for multiple
+  comparisons; they should not be read as a confirmatory family-wide error
+  guarantee.
 - The model reproduces a pinned CPU/RAM scoring formula, not production Nomad
   behavior or impact.

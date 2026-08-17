@@ -7,7 +7,8 @@ an executable check or generated artifact.
 
 ### Test suite
 
-- **170 tests pass: 127 preserved Phase 1–3 tests plus 43 Phase 4 tests.**
+- **171 tests pass: 127 preserved Phase 1–3 tests, 43 Phase 4 tests, and one
+  final seed-block statistics regression test.**
 - Evidence: `python -m pytest` release run and the `tests/` suite.
 - Coverage focus: Nomad formula boundaries, base-10 equivalence, feasibility
   filtering, immutable state, deterministic workload generation, tie behavior,
@@ -33,20 +34,20 @@ At overload (`rho=1.30`), Tetris versus Nomad-style binpack across 160 paired
 held-out traces:
 
 - completed **+0.256 jobs per simulated time unit** (95% CI
-  `[+0.192, +0.321]`), a **1.38%** gain over binpack's 18.563;
+  `[+0.201, +0.312]`), a **1.38%** gain over binpack's 18.563;
 - left **9.41 fewer jobs queued** at the horizon;
 - used **1.19 more time-weighted active nodes**;
 - increased drained-job P95 waiting by **0.53 simulated time units**.
 
 The qualification is essential: low-load throughput was identical, and near
 saturation Tetris was `-0.036` jobs/time unit (95% CI
-`[-0.063, -0.009]`). The clear high-load family gains were RAM-heavy, bimodal,
+`[-0.053, -0.019]`). The clear high-load family gains were RAM-heavy, bimodal,
 tiny/large, drift, and adversarial. Evidence:
 `results/temporal/canonical/paired_overall_load_vs_binpack.csv` and
 `paired_family_load_vs_binpack.csv`.
 
 The high-load hybrid provided a limited compromise versus binpack: +0.162
-jobs/time unit (95% CI `[+0.112, +0.211]`) for +0.86 time-weighted active
+jobs/time unit (95% CI `[+0.127, +0.196]`) for +0.86 time-weighted active
 nodes, versus Tetris's +0.256 throughput and +1.19 nodes. It still increased
 P95 wait.
 
@@ -129,11 +130,13 @@ improved admission in several mixed workloads but consolidated less strongly.
 - Built a deterministic event-driven Python scheduler simulator reproducing a
   pinned HashiCorp Nomad CPU/RAM fit score, with Poisson arrivals, job
   completion/resource release, FIFO-scan backfilling, horizon/drain metrics,
-  and 170 tests covering scoring and lifecycle invariants.
+  and validated it with 171 tests covering scoring, lifecycle invariants, and
+  seed-block statistics.
 - Executed 1,920 paired held-out temporal runs across 48 workload/cluster/load
-  cells, finding Tetris increased overload throughput by 1.38% (95% CI
-  1.03–1.73%) while using 1.19 more time-weighted active nodes and increasing
-  P95 wait by 0.53 simulated time units.
+  cells, finding Tetris increased overload throughput by 1.38% (paired
+  absolute-delta 95% CI +0.201 to +0.312 jobs/time unit) while using 1.19 more
+  time-weighted active nodes and increasing P95 wait by 0.53 simulated time
+  units.
 - Quantified a load-dependent result: resource-shape alignment added no
   low-load throughput, slightly reduced near-saturation throughput overall,
   and improved overload throughput most on mixed, drifting, and adversarial

@@ -259,17 +259,21 @@ produces 1,920 held-out temporal runs. Phase 3 separately has 11 policies and
 
 The primary comparison is a paired per-trace policy difference against binpack.
 Phase 4 reports throughput, drained P95 wait, horizon backlog, utilization, and
-time-weighted active nodes with mean, dispersion, and two-sided 95% paired
-t-intervals. Each family/load statistic pools 20 pairs; each overall-load
-statistic pools 160. Phase 3 uses the same paired idea for admission.
+time-weighted active nodes. It first averages paired deltas across the
+predeclared strata within each seed, then forms a two-sided 95% t-interval over
+the ten seed blocks. Family/load means cover 20 pairs and overall-load means
+cover 160, but the inferential sample size is ten in both cases. Per-run
+nearest-rank P95 values are macro-averaged rather than pooling jobs. Family
+comparisons are exploratory and unadjusted for multiplicity. Phase 3 uses its
+documented paired admission analysis.
 
 ### How did Tetris perform?
 
 At overload it completed 0.256 more jobs per simulated time unit than binpack
-(95% CI `[+0.192, +0.321]`), or +1.38%. The clear gains were RAM-heavy,
+(95% CI `[+0.201, +0.312]`), or +1.38%. The clear gains were RAM-heavy,
 bimodal, tiny/large, drift, and adversarial. At low load throughput was
 identical. Near saturation Tetris was 0.036 lower overall (95% CI
-`[-0.063, -0.009]`), with drift the positive exception. It is not always
+`[-0.053, -0.019]`), with drift the positive exception. It is not always
 better.
 
 Phase 3 separately found 1.6–3.7 percentage-point admission gains on four
