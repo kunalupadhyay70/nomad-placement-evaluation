@@ -1,0 +1,17 @@
+{
+  "source": "results/matrix/final.csv",
+  "source_sha256": "4fbbed16385ca92963f05de1147b5c86a8b4709f3dd681862eb7ceafb7d99912",
+  "split": "test",
+  "raw_policy_runs": 5280,
+  "workload_families": 8,
+  "cluster_configurations": 2,
+  "load_levels": 3,
+  "experiment_cells": 48,
+  "seeds_per_cell": 10,
+  "seed_range": [
+    1000,
+    1009
+  ],
+  "policies_and_ablations": 11,
+  "timing_excluded_from_canonical_claims": true
+}

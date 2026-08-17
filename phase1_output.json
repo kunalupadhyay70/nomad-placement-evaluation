@@ -1,0 +1,52 @@
+{
+  "phase": "Phase One",
+  "status": "complete",
+  "source_of_truth": {
+    "repo": "https://github.com/hashicorp/nomad",
+    "branch": "main",
+    "file": "nomad/structs/funcs.go",
+    "functions_verified": ["computeFreePercentage", "ScoreFitBinPack", "ScoreFitSpread"],
+    "note": "Prior draft of this report cited scheduler/rank.go as the source location; the scoring functions actually live in nomad/structs/funcs.go. Formulas themselves were correct, citation path was not."
+  },
+  "verified_formulas": {
+    "free_fraction": "1 - (used / total)",
+    "raw_total": "10**free_cpu_fraction + 10**free_ram_fraction",
+    "binpack_raw": "clamp(20.0 - raw_total, 0, 18)",
+    "spread_raw": "clamp(raw_total - 2.0, 0, 18)",
+    "normalization": "score / 18 maps Nomad's raw [0,18] range to [0,1]"
+  },
+  "project_structure": [
+    "sim/__init__.py",
+    "sim/models.py",
+    "sim/policies.py",
+    "tests/test_policies.py",
+    "phase1_output.json"
+  ],
+  "test_results": {
+    "command": "PYTHONPATH=. python3 -m pytest tests/ -v",
+    "exit_code": 0,
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "requirements_coverage": [
+      {"requirement": "Empty node gives binpack == 0", "tests": 1, "result": "passed"},
+      {"requirement": "Empty node gives spread == 1", "tests": 1, "result": "passed"},
+      {"requirement": "Perfect fit gives binpack == 1", "tests": 1, "result": "passed"},
+      {"requirement": "Perfect fit gives spread == 0", "tests": 1, "result": "passed"},
+      {"requirement": "make_binpack_tunable(10) equals binpack exactly", "tests": 5, "result": "passed"},
+      {"requirement": "Balanced 50/50 leftovers outrank 20/80 under bin-pack", "tests": 1, "result": "passed"},
+      {"requirement": "20/80 leftovers outrank 50/50 under spread", "tests": 1, "result": "passed"},
+      {"requirement": "Scoring leaves node and job unchanged (structurally immutable)", "tests": 3, "result": "passed"},
+      {"requirement": "Bases 1, 0, and negative values raise ValueError", "tests": 4, "result": "passed"}
+    ]
+  },
+  "not_started": [
+    "workload generator",
+    "scheduler",
+    "metrics",
+    "experiment runner",
+    "plotting code",
+    "baseline results",
+    "README"
+  ]
+}

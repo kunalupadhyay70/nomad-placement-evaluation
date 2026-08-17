@@ -1,0 +1,6520 @@
+{
+  "phase": "Phase Two (corrected)",
+  "status": "single-seed smoke experiment -- pipeline validation only, not a general policy comparison",
+  "experiment_type": "single-seed integration experiment",
+  "limitation": "These values describe one deterministic configuration (one seed, one cluster, one workload composition, one arrival order) and must not be generalized across workloads or arrival orders. See METHODOLOGY_CORRECTION_REPORT.md and README.md 'Limitations'.",
+  "config": {
+    "n_nodes": 24,
+    "seed": 42,
+    "jobs_per_class": 20,
+    "total_jobs": 180
+  },
+  "workload_distribution": {
+    "small_balanced": 20,
+    "small_cpu_heavy": 20,
+    "small_ram_heavy": 20,
+    "medium_balanced": 20,
+    "medium_cpu_heavy": 20,
+    "medium_ram_heavy": 20,
+    "large_balanced": 20,
+    "large_cpu_heavy": 20,
+    "large_ram_heavy": 20
+  },
+  "cluster": [
+    {
+      "node_id": "node-000",
+      "total_cpu": 104.92331510130455,
+      "total_ram": 68.80206500275204,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-001",
+      "total_cpu": 81.60187637562363,
+      "total_ram": 106.85646172457396,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-002",
+      "total_cpu": 111.1341577064968,
+      "total_ram": 193.92630158519898,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-003",
+      "total_cpu": 121.0994923331101,
+      "total_ram": 80.69225586484791,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-004",
+      "total_cpu": 91.00299645985731,
+      "total_ram": 69.72106613210951,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-005",
+      "total_cpu": 77.99283038743062,
+      "total_ram": 161.02821531584559,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-006",
+      "total_cpu": 65.69830205976727,
+      "total_ram": 102.17682893183651,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-007",
+      "total_cpu": 105.59260401788949,
+      "total_ram": 168.62876427581762,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-008",
+      "total_cpu": 78.10819981060459,
+      "total_ram": 177.13901130417446,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-009",
+      "total_cpu": 115.8035492273809,
+      "total_ram": 65.24776185818772,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-010",
+      "total_cpu": 115.57243211729971,
+      "total_ram": 198.04276383773956,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-011",
+      "total_cpu": 85.77603305715148,
+      "total_ram": 93.85206396386207,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-012",
+      "total_cpu": 125.261636621234,
+      "total_ram": 128.62615266162433,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-013",
+      "total_cpu": 69.93573397632946,
+      "total_ram": 82.56954435202509,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-014",
+      "total_cpu": 118.23963944623742,
+      "total_ram": 179.91539802244307,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-015",
+      "total_cpu": 115.65620948956033,
+      "total_ram": 204.10850304521304,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-016",
+      "total_cpu": 98.31859785310084,
+      "total_ram": 250.83822668403917,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-017",
+      "total_cpu": 88.22620014133463,
+      "total_ram": 169.9918012044596,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-018",
+      "total_cpu": 117.08189851219167,
+      "total_ram": 182.75579245393524,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-019",
+      "total_cpu": 119.14924161988975,
+      "total_ram": 174.8516118892983,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-020",
+      "total_cpu": 109.09259751775511,
+      "total_ram": 72.79828166188715,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-021",
+      "total_cpu": 78.585489641699,
+      "total_ram": 119.56248901160458,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-022",
+      "total_cpu": 69.10668652311216,
+      "total_ram": 108.6958501813178,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    },
+    {
+      "node_id": "node-023",
+      "total_cpu": 70.46409148222267,
+      "total_ram": 117.37093179713769,
+      "used_cpu": 0.0,
+      "used_ram": 0.0
+    }
+  ],
+  "jobs_in_arrival_order": [
+    {
+      "job_id": "job-small-ram_heavy-0009",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0013",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-balanced-0015",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0002",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-balanced-0013",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0016",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-balanced-0000",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-small-balanced-0003",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-balanced-0001",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-balanced-0019",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-balanced-0005",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0010",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0009",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0002",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0018",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0007",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0019",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0000",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0010",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-balanced-0006",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0015",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0014",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0005",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0014",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-balanced-0001",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0004",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0015",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-balanced-0014",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0002",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0006",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0014",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0012",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0002",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0005",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0004",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0019",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-balanced-0009",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0000",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0015",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0000",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0016",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-balanced-0016",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0017",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-balanced-0006",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0001",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-balanced-0004",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0000",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0003",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0018",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-balanced-0011",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0003",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-balanced-0013",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-small-balanced-0002",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-balanced-0016",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0002",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0016",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0005",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0003",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0001",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0005",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0004",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0012",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-balanced-0019",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0010",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0012",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0017",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0014",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0016",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-balanced-0013",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-balanced-0008",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0013",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-balanced-0018",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0015",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0018",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-medium-balanced-0003",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-balanced-0018",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0003",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-balanced-0012",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0007",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0007",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-balanced-0010",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0011",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0013",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-balanced-0004",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0000",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0006",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0001",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0004",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0018",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0007",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-balanced-0018",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0000",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0013",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0015",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0019",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0011",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0014",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0013",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-balanced-0008",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0001",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0001",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-balanced-0017",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-balanced-0009",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0002",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0008",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0009",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0014",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0005",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0019",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0005",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0007",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-balanced-0012",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0006",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0006",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0001",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0018",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0013",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0008",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-balanced-0012",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0010",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-balanced-0005",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0009",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-balanced-0010",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0017",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0018",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0009",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0004",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-balanced-0016",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-balanced-0017",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0009",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0012",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-balanced-0015",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0000",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0016",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0011",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0017",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-balanced-0011",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-balanced-0007",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0008",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0011",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0004",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0017",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0005",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0012",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0006",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0004",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0019",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0012",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-medium-cpu_heavy-0007",
+      "size_class": "medium",
+      "shape": "cpu_heavy",
+      "cpu": 20.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0008",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0000",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-balanced-0001",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-balanced-0011",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0010",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0014",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0016",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0007",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0011",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0010",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0003",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0017",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0014",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-small-balanced-0009",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0019",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0015",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0003",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-balanced-0007",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-balanced-0008",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-medium-ram_heavy-0008",
+      "size_class": "medium",
+      "shape": "ram_heavy",
+      "cpu": 5.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-small-cpu_heavy-0011",
+      "size_class": "small",
+      "shape": "cpu_heavy",
+      "cpu": 8.0,
+      "ram": 2.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0002",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-balanced-0019",
+      "size_class": "small",
+      "shape": "balanced",
+      "cpu": 5.0,
+      "ram": 5.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0006",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0015",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-large-ram_heavy-0017",
+      "size_class": "large",
+      "shape": "ram_heavy",
+      "cpu": 8.0,
+      "ram": 32.0
+    },
+    {
+      "job_id": "job-medium-balanced-0002",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-medium-balanced-0010",
+      "size_class": "medium",
+      "shape": "balanced",
+      "cpu": 12.5,
+      "ram": 12.5
+    },
+    {
+      "job_id": "job-large-balanced-0006",
+      "size_class": "large",
+      "shape": "balanced",
+      "cpu": 20.0,
+      "ram": 20.0
+    },
+    {
+      "job_id": "job-large-cpu_heavy-0008",
+      "size_class": "large",
+      "shape": "cpu_heavy",
+      "cpu": 32.0,
+      "ram": 8.0
+    },
+    {
+      "job_id": "job-small-ram_heavy-0003",
+      "size_class": "small",
+      "shape": "ram_heavy",
+      "cpu": 2.0,
+      "ram": 8.0
+    }
+  ],
+  "policies": {
+    "binpack": {
+      "jobs_offered": 180,
+      "jobs_placed": 173,
+      "jobs_failed": 7,
+      "score_tie_count": 0,
+      "decisions": [
+        {
+          "job_id": "job-small-ram_heavy-0009",
+          "node_id": "node-009",
+          "score": 0.15830756844947894,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0013",
+          "node_id": "node-009",
+          "score": 0.5203116747184792,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0015",
+          "node_id": "node-009",
+          "score": 0.7382903375243995,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0002",
+          "node_id": "node-004",
+          "score": 0.4642711698029639,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0013",
+          "node_id": "node-004",
+          "score": 0.737809026983195,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0016",
+          "node_id": "node-004",
+          "score": 0.9127909789666906,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0000",
+          "node_id": "node-013",
+          "score": 0.3509402974478588,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0003",
+          "node_id": "node-004",
+          "score": 0.9389149575917277,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0001",
+          "node_id": "node-013",
+          "score": 0.5905221831083929,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0019",
+          "node_id": "node-013",
+          "score": 0.8264554134122162,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0005",
+          "node_id": "node-013",
+          "score": 0.9156710216174607,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0010",
+          "node_id": "node-006",
+          "score": 0.46621398230631583,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0009",
+          "node_id": "node-004",
+          "score": 0.962721364829055,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0002",
+          "node_id": "node-006",
+          "score": 0.7257285024321605,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0018",
+          "node_id": "node-013",
+          "score": 0.9761533201387229,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0007",
+          "node_id": "node-013",
+          "score": 0.99525336720431,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0019",
+          "node_id": "node-006",
+          "score": 0.8474090254419864,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0000",
+          "node_id": "node-006",
+          "score": 0.8835807854339277,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0010",
+          "node_id": "node-006",
+          "score": 0.9142816575324133,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0006",
+          "node_id": "node-000",
+          "score": 0.3232042684604674,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0015",
+          "node_id": "node-009",
+          "score": 0.8494967000293531,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0014",
+          "node_id": "node-006",
+          "score": 0.9403805590424853,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0005",
+          "node_id": "node-000",
+          "score": 0.6221379001634512,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0014",
+          "node_id": "node-000",
+          "score": 0.7395710986666423,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0001",
+          "node_id": "node-000",
+          "score": 0.7900525800047518,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0004",
+          "node_id": "node-004",
+          "score": 0.9826605528341238,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0015",
+          "node_id": "node-006",
+          "score": 0.9626053397570209,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0014",
+          "node_id": "node-000",
+          "score": 0.8874859581579169,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0002",
+          "node_id": "node-000",
+          "score": 0.9108092781955199,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0006",
+          "node_id": "node-000",
+          "score": 0.9311983637396347,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0014",
+          "node_id": "node-022",
+          "score": 0.46211215838264086,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0012",
+          "node_id": "node-022",
+          "score": 0.707916971847024,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0002",
+          "node_id": "node-000",
+          "score": 0.9610443912264333,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0005",
+          "node_id": "node-022",
+          "score": 0.8052241207366202,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0004",
+          "node_id": "node-022",
+          "score": 0.9080213924107391,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0019",
+          "node_id": "node-023",
+          "score": 0.318464554508941,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0009",
+          "node_id": "node-023",
+          "score": 0.524904205885839,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0000",
+          "node_id": "node-023",
+          "score": 0.6538922112800811,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0015",
+          "node_id": "node-022",
+          "score": 0.9437282729555952,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0000",
+          "node_id": "node-020",
+          "score": 0.4517452346195354,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0016",
+          "node_id": "node-023",
+          "score": 0.7849108784524178,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0016",
+          "node_id": "node-020",
+          "score": 0.7155230482675647,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0017",
+          "node_id": "node-023",
+          "score": 0.8202516298500697,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0006",
+          "node_id": "node-023",
+          "score": 0.8515573658439474,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0001",
+          "node_id": "node-020",
+          "score": 0.812933996030905,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0004",
+          "node_id": "node-020",
+          "score": 0.8899649511253315,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0000",
+          "node_id": "node-022",
+          "score": 0.9715702999250908,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0003",
+          "node_id": "node-021",
+          "score": 0.2973647638075302,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0018",
+          "node_id": "node-021",
+          "score": 0.5575319863367851,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0011",
+          "node_id": "node-021",
+          "score": 0.6137357146872757,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0003",
+          "node_id": "node-021",
+          "score": 0.8162947992777396,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0013",
+          "node_id": "node-021",
+          "score": 0.8870399695524243,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0002",
+          "node_id": "node-011",
+          "score": 0.13391575372378503,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0016",
+          "node_id": "node-011",
+          "score": 0.4021792169612579,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0002",
+          "node_id": "node-011",
+          "score": 0.5860386319351439,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0016",
+          "node_id": "node-011",
+          "score": 0.6553288633774412,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0005",
+          "node_id": "node-011",
+          "score": 0.7127692458206908,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0003",
+          "node_id": "node-011",
+          "score": 0.8727061228383343,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0001",
+          "node_id": "node-011",
+          "score": 0.900918068518147,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0005",
+          "node_id": "node-001",
+          "score": 0.4341046105862737,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0004",
+          "node_id": "node-011",
+          "score": 0.9261306517562795,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0012",
+          "node_id": "node-001",
+          "score": 0.679155225640939,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0019",
+          "node_id": "node-011",
+          "score": 0.9766932217667645,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0010",
+          "node_id": "node-001",
+          "score": 0.7654307307841308,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0012",
+          "node_id": "node-001",
+          "score": 0.8705414612831037,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0017",
+          "node_id": "node-005",
+          "score": 0.13253239906291744,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0014",
+          "node_id": "node-005",
+          "score": 0.4230567578762378,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0016",
+          "node_id": "node-000",
+          "score": 0.9844129690651822,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0013",
+          "node_id": "node-005",
+          "score": 0.4941700248411444,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0008",
+          "node_id": "node-005",
+          "score": 0.557132542985645,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0013",
+          "node_id": "node-005",
+          "score": 0.7467436990371465,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0018",
+          "node_id": "node-003",
+          "score": 0.4173359356463696,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0015",
+          "node_id": "node-005",
+          "score": 0.8261950443155253,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0018",
+          "node_id": "node-005",
+          "score": 0.8499836386630444,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0003",
+          "node_id": "node-003",
+          "score": 0.5918741369262516,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0018",
+          "node_id": "node-003",
+          "score": 0.7211571228979315,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0003",
+          "node_id": "node-005",
+          "score": 0.9073187762999587,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0012",
+          "node_id": "node-003",
+          "score": 0.8172582973931181,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0007",
+          "node_id": "node-003",
+          "score": 0.9240938884091316,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0007",
+          "node_id": "node-003",
+          "score": 0.9453665865101846,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0010",
+          "node_id": "node-003",
+          "score": 0.9632817389100148,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0011",
+          "node_id": "node-012",
+          "score": 0.3182424592465889,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0013",
+          "node_id": "node-003",
+          "score": 0.9790770026974237,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0004",
+          "node_id": "node-012",
+          "score": 0.5600617660253308,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0000",
+          "node_id": "node-012",
+          "score": 0.6079705804057889,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0006",
+          "node_id": "node-001",
+          "score": 0.9020891624147005,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0001",
+          "node_id": "node-012",
+          "score": 0.7367191760198815,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0004",
+          "node_id": "node-012",
+          "score": 0.7936644346711819,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0018",
+          "node_id": "node-001",
+          "score": 0.9290005628349939,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0007",
+          "node_id": "node-012",
+          "score": 0.8290576299794864,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0018",
+          "node_id": "node-012",
+          "score": 0.8536585523231225,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0000",
+          "node_id": "node-008",
+          "score": 0.20332104895608558,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0013",
+          "node_id": "node-008",
+          "score": 0.36709159791665713,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0015",
+          "node_id": "node-012",
+          "score": 0.8761134951943096,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0019",
+          "node_id": "node-023",
+          "score": 0.884239230750522,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0011",
+          "node_id": "node-008",
+          "score": 0.49940716777537897,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0014",
+          "node_id": "node-012",
+          "score": 0.8966096790650754,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0013",
+          "node_id": "node-008",
+          "score": 0.6744642141193435,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0008",
+          "node_id": "node-008",
+          "score": 0.771280095230616,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0001",
+          "node_id": "node-017",
+          "score": 0.3716061353853737,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0001",
+          "node_id": "node-008",
+          "score": 0.7991583157105819,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0017",
+          "node_id": "node-008",
+          "score": 0.8663756129788696,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0009",
+          "node_id": "node-017",
+          "score": 0.5879106120682407,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0002",
+          "node_id": "node-017",
+          "score": 0.6709584462963294,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0008",
+          "node_id": "node-012",
+          "score": 0.9200286479833305,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0009",
+          "node_id": "node-007",
+          "score": 0.23303286807525028,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0014",
+          "node_id": "node-007",
+          "score": 0.4671567269315528,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0005",
+          "node_id": "node-007",
+          "score": 0.5610423784937665,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0019",
+          "node_id": "node-008",
+          "score": 0.8891294447026259,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0005",
+          "node_id": "node-008",
+          "score": 0.9554816254071405,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0007",
+          "node_id": "node-017",
+          "score": 0.8119180822156881,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0012",
+          "node_id": "node-017",
+          "score": 0.8354253433715437,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0006",
+          "node_id": "node-007",
+          "score": 0.7333537256214959,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0006",
+          "node_id": "node-007",
+          "score": 0.8104590085380994,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0001",
+          "node_id": "node-007",
+          "score": 0.8553235088808366,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0018",
+          "node_id": "node-019",
+          "score": 0.27062057651358096,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0013",
+          "node_id": "node-017",
+          "score": 0.8606046293813248,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0008",
+          "node_id": "node-019",
+          "score": 0.46414802157745555,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0012",
+          "node_id": "node-019",
+          "score": 0.6502544564639852,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0010",
+          "node_id": "node-019",
+          "score": 0.7183294913607667,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0005",
+          "node_id": "node-019",
+          "score": 0.7504980613268647,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0009",
+          "node_id": "node-019",
+          "score": 0.8021511502954348,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0010",
+          "node_id": "node-019",
+          "score": 0.8921488137922826,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0017",
+          "node_id": "node-019",
+          "score": 0.9649283496371945,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0018",
+          "node_id": "node-016",
+          "score": 0.23269595637795198,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0009",
+          "node_id": "node-016",
+          "score": 0.4536748282411734,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0004",
+          "node_id": "node-016",
+          "score": 0.5372686195968385,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0016",
+          "node_id": "node-019",
+          "score": 0.9763978381596075,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0017",
+          "node_id": "node-016",
+          "score": 0.6547407663809752,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0009",
+          "node_id": "node-014",
+          "score": 0.2668372643591758,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0012",
+          "node_id": "node-014",
+          "score": 0.44306400689576086,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0015",
+          "node_id": "node-014",
+          "score": 0.5637971898745513,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0000",
+          "node_id": "node-014",
+          "score": 0.7095736429898416,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0016",
+          "node_id": "node-014",
+          "score": 0.7697448543050225,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0011",
+          "node_id": "node-002",
+          "score": 0.3196203845714357,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0017",
+          "node_id": "node-014",
+          "score": 0.8346333377757958,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0011",
+          "node_id": "node-014",
+          "score": 0.9051207321131736,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0007",
+          "node_id": "node-002",
+          "score": 0.45462353847985626,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0008",
+          "node_id": "node-002",
+          "score": 0.5546873726155785,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0011",
+          "node_id": "node-002",
+          "score": 0.6278740431130824,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0004",
+          "node_id": "node-018",
+          "score": 0.31273888821405726,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0017",
+          "node_id": "node-002",
+          "score": 0.6828941397499437,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0005",
+          "node_id": "node-019",
+          "score": 0.9855899645626233,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0012",
+          "node_id": "node-002",
+          "score": 0.7185088577325731,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0006",
+          "node_id": "node-018",
+          "score": 0.43968953660764654,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0004",
+          "node_id": "node-002",
+          "score": 0.7510257373449455,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0019",
+          "node_id": "node-018",
+          "score": 0.5782251306594837,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0012",
+          "node_id": "node-019",
+          "score": 0.9966264389619605,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0007",
+          "node_id": "node-018",
+          "score": 0.6388859061291039,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0008",
+          "node_id": "node-002",
+          "score": 0.780720239130399,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0000",
+          "node_id": "node-018",
+          "score": 0.7821914051783181,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0001",
+          "node_id": "node-010",
+          "score": 0.2978490519911928,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0011",
+          "node_id": "node-010",
+          "score": 0.43962800728131884,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0010",
+          "node_id": "node-010",
+          "score": 0.49121624832151956,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0014",
+          "node_id": "node-018",
+          "score": 0.847530600312226,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0016",
+          "node_id": "node-010",
+          "score": 0.6433107907352861,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0007",
+          "node_id": "node-016",
+          "score": 0.7275990446839731,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0011",
+          "node_id": "node-010",
+          "score": 0.674342622987713,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0010",
+          "node_id": "node-010",
+          "score": 0.7768581731464244,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0003",
+          "node_id": "node-010",
+          "score": 0.8060782866977385,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0017",
+          "node_id": "node-010",
+          "score": 0.8258228943163103,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0014",
+          "node_id": "node-010",
+          "score": 0.8500270319692357,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0009",
+          "node_id": "node-010",
+          "score": 0.8694113175335042,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0019",
+          "node_id": "node-010",
+          "score": 0.926611318588529,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0015",
+          "node_id": "node-010",
+          "score": 0.9686763314750784,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0003",
+          "node_id": "node-015",
+          "score": 0.30970251523301495,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0007",
+          "node_id": "node-015",
+          "score": 0.5087302923830601,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0008",
+          "node_id": "node-015",
+          "score": 0.6553533131653242,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0008",
+          "node_id": "node-015",
+          "score": 0.7332006013933788,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0011",
+          "node_id": "node-010",
+          "score": 0.9818525995799858,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0002",
+          "node_id": "node-015",
+          "score": 0.8119741870814919,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0019",
+          "node_id": "node-010",
+          "score": 0.9917559230642483,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0015",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-ram_heavy-0017",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-medium-balanced-0002",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-medium-balanced-0010",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-balanced-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0008",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-small-ram_heavy-0003",
+          "node_id": "node-015",
+          "score": 0.8347910584120405,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        }
+      ],
+      "final_nodes": [
+        {
+          "node_id": "node-000",
+          "total_cpu": 104.92331510130455,
+          "total_ram": 68.80206500275204,
+          "used_cpu": 102.0,
+          "used_ram": 63.0
+        },
+        {
+          "node_id": "node-001",
+          "total_cpu": 81.60187637562363,
+          "total_ram": 106.85646172457396,
+          "used_cpu": 81.0,
+          "used_ram": 69.0
+        },
+        {
+          "node_id": "node-002",
+          "total_cpu": 111.1341577064968,
+          "total_ram": 193.92630158519898,
+          "used_cpu": 110.5,
+          "used_ram": 59.5
+        },
+        {
+          "node_id": "node-003",
+          "total_cpu": 121.0994923331101,
+          "total_ram": 80.69225586484791,
+          "used_cpu": 104.5,
+          "used_ram": 80.5
+        },
+        {
+          "node_id": "node-004",
+          "total_cpu": 91.00299645985731,
+          "total_ram": 69.72106613210951,
+          "used_cpu": 81.0,
+          "used_ram": 69.0
+        },
+        {
+          "node_id": "node-005",
+          "total_cpu": 77.99283038743062,
+          "total_ram": 161.02821531584559,
+          "used_cpu": 76.0,
+          "used_ram": 94.0
+        },
+        {
+          "node_id": "node-006",
+          "total_cpu": 65.69830205976727,
+          "total_ram": 102.17682893183651,
+          "used_cpu": 65.0,
+          "used_ram": 80.0
+        },
+        {
+          "node_id": "node-007",
+          "total_cpu": 105.59260401788949,
+          "total_ram": 168.62876427581762,
+          "used_cpu": 105.0,
+          "used_ram": 75.0
+        },
+        {
+          "node_id": "node-008",
+          "total_cpu": 78.10819981060459,
+          "total_ram": 177.13901130417446,
+          "used_cpu": 78.0,
+          "used_ram": 132.0
+        },
+        {
+          "node_id": "node-009",
+          "total_cpu": 115.8035492273809,
+          "total_ram": 65.24776185818772,
+          "used_cpu": 50.0,
+          "used_ram": 65.0
+        },
+        {
+          "node_id": "node-010",
+          "total_cpu": 115.57243211729971,
+          "total_ram": 198.04276383773956,
+          "used_cpu": 110.5,
+          "used_ram": 194.5
+        },
+        {
+          "node_id": "node-011",
+          "total_cpu": 85.77603305715148,
+          "total_ram": 93.85206396386207,
+          "used_cpu": 84.0,
+          "used_ram": 81.0
+        },
+        {
+          "node_id": "node-012",
+          "total_cpu": 125.261636621234,
+          "total_ram": 128.62615266162433,
+          "used_cpu": 77.0,
+          "used_ram": 128.0
+        },
+        {
+          "node_id": "node-013",
+          "total_cpu": 69.93573397632946,
+          "total_ram": 82.56954435202509,
+          "used_cpu": 67.5,
+          "used_ram": 82.5
+        },
+        {
+          "node_id": "node-014",
+          "total_cpu": 118.23963944623742,
+          "total_ram": 179.91539802244307,
+          "used_cpu": 117.5,
+          "used_ram": 102.5
+        },
+        {
+          "node_id": "node-015",
+          "total_cpu": 115.65620948956033,
+          "total_ram": 204.10850304521304,
+          "used_cpu": 111.0,
+          "used_ram": 84.0
+        },
+        {
+          "node_id": "node-016",
+          "total_cpu": 98.31859785310084,
+          "total_ram": 250.83822668403917,
+          "used_cpu": 97.0,
+          "used_ram": 58.0
+        },
+        {
+          "node_id": "node-017",
+          "total_cpu": 88.22620014133463,
+          "total_ram": 169.9918012044596,
+          "used_cpu": 87.0,
+          "used_ram": 78.0
+        },
+        {
+          "node_id": "node-018",
+          "total_cpu": 117.08189851219167,
+          "total_ram": 182.75579245393524,
+          "used_cpu": 117.0,
+          "used_ram": 78.0
+        },
+        {
+          "node_id": "node-019",
+          "total_cpu": 119.14924161988975,
+          "total_ram": 174.8516118892983,
+          "used_cpu": 118.0,
+          "used_ram": 172.0
+        },
+        {
+          "node_id": "node-020",
+          "total_cpu": 109.09259751775511,
+          "total_ram": 72.79828166188715,
+          "used_cpu": 57.5,
+          "used_ram": 72.5
+        },
+        {
+          "node_id": "node-021",
+          "total_cpu": 78.585489641699,
+          "total_ram": 119.56248901160458,
+          "used_cpu": 77.5,
+          "used_ram": 62.5
+        },
+        {
+          "node_id": "node-022",
+          "total_cpu": 69.10668652311216,
+          "total_ram": 108.6958501813178,
+          "used_cpu": 57.0,
+          "used_ram": 108.0
+        },
+        {
+          "node_id": "node-023",
+          "total_cpu": 70.46409148222267,
+          "total_ram": 117.37093179713769,
+          "used_cpu": 69.5,
+          "used_ram": 60.5
+        }
+      ],
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.9106735266163021,
+        "mean_ram_utilization": 0.72322158807593,
+        "cpu_imbalance": 0.15448704601303262,
+        "ram_imbalance": 0.2577240583485624,
+        "cpu_free_fraction_gap": 0.5675348066271775,
+        "ram_free_fraction_gap": 0.7679330230816743,
+        "cpu_dispersion": 0.7168812058938104,
+        "ram_dispersion": 0.8292255190817337
+      },
+      "placed_by_size": {
+        "small": 60,
+        "large": 55,
+        "medium": 58
+      },
+      "rejected_by_size": {
+        "large": 5,
+        "medium": 2
+      },
+      "placed_by_shape": {
+        "ram_heavy": 59,
+        "balanced": 57,
+        "cpu_heavy": 57
+      },
+      "rejected_by_shape": {
+        "cpu_heavy": 3,
+        "ram_heavy": 1,
+        "balanced": 3
+      },
+      "placed_by_size_and_shape": {
+        "small_ram_heavy": 20,
+        "large_ram_heavy": 19,
+        "large_balanced": 19,
+        "large_cpu_heavy": 17,
+        "medium_balanced": 18,
+        "small_balanced": 20,
+        "small_cpu_heavy": 20,
+        "medium_ram_heavy": 20,
+        "medium_cpu_heavy": 20
+      },
+      "rejected_by_size_and_shape": {
+        "large_cpu_heavy": 3,
+        "large_ram_heavy": 1,
+        "medium_balanced": 2,
+        "large_balanced": 1
+      },
+      "nodes_fitting_class": {
+        "small_balanced": 0,
+        "small_cpu_heavy": 0,
+        "small_ram_heavy": 1,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 0,
+        "medium_ram_heavy": 0,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 0
+      },
+      "additional_jobs_placeable": {
+        "small_balanced": 0,
+        "small_cpu_heavy": 0,
+        "small_ram_heavy": 2,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 0,
+        "medium_ram_heavy": 0,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 0
+      }
+    },
+    "spread": {
+      "jobs_offered": 180,
+      "jobs_placed": 172,
+      "jobs_failed": 8,
+      "score_tie_count": 0,
+      "decisions": [
+        {
+          "job_id": "job-small-ram_heavy-0009",
+          "node_id": "node-016",
+          "score": 0.9352421789189349,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0013",
+          "node_id": "node-015",
+          "score": 0.7498587485607278,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0015",
+          "node_id": "node-010",
+          "score": 0.7021509480088072,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0002",
+          "node_id": "node-002",
+          "score": 0.7395281377032071,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0013",
+          "node_id": "node-018",
+          "score": 0.6955906615958771,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0016",
+          "node_id": "node-014",
+          "score": 0.6882925802582913,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0000",
+          "node_id": "node-019",
+          "score": 0.7964567050185918,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0003",
+          "node_id": "node-007",
+          "score": 0.9059482436237735,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0001",
+          "node_id": "node-012",
+          "score": 0.7745619968348225,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0019",
+          "node_id": "node-016",
+          "score": 0.6503938038181479,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0005",
+          "node_id": "node-017",
+          "score": 0.7588217048756235,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0010",
+          "node_id": "node-003",
+          "score": 0.633385435235703,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0009",
+          "node_id": "node-009",
+          "score": 0.8804397102084367,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0002",
+          "node_id": "node-008",
+          "score": 0.6253479530720578,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0018",
+          "node_id": "node-005",
+          "score": 0.7855759580682944,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0007",
+          "node_id": "node-021",
+          "score": 0.8732904139100144,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0019",
+          "node_id": "node-023",
+          "score": 0.735957227123448,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0000",
+          "node_id": "node-001",
+          "score": 0.8815453045955933,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0010",
+          "node_id": "node-022",
+          "score": 0.8775807744912147,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0006",
+          "node_id": "node-007",
+          "score": 0.7056715108541627,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0015",
+          "node_id": "node-020",
+          "score": 0.7274273816804079,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0014",
+          "node_id": "node-011",
+          "score": 0.8719526868448505,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0005",
+          "node_id": "node-000",
+          "score": 0.5892103684572996,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0014",
+          "node_id": "node-004",
+          "score": 0.6948108418793253,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0001",
+          "node_id": "node-006",
+          "score": 0.8514976714094864,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0004",
+          "node_id": "node-013",
+          "score": 0.8412179693478659,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0015",
+          "node_id": "node-001",
+          "score": 0.778693161266975,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0014",
+          "node_id": "node-019",
+          "score": 0.6312967463329979,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0002",
+          "node_id": "node-009",
+          "score": 0.7754745162177122,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0006",
+          "node_id": "node-021",
+          "score": 0.7539586823808693,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0014",
+          "node_id": "node-015",
+          "score": 0.5160397955102778,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0012",
+          "node_id": "node-002",
+          "score": 0.5475304422987275,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0002",
+          "node_id": "node-022",
+          "score": 0.770970988192807,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0005",
+          "node_id": "node-011",
+          "score": 0.6287747035922878,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0004",
+          "node_id": "node-005",
+          "score": 0.5314920016421837,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0019",
+          "node_id": "node-012",
+          "score": 0.6007100022357318,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0009",
+          "node_id": "node-017",
+          "score": 0.5741692530532327,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0000",
+          "node_id": "node-013",
+          "score": 0.5669084942490858,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0015",
+          "node_id": "node-006",
+          "score": 0.7156217200361482,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0000",
+          "node_id": "node-010",
+          "score": 0.48822317688084715,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0016",
+          "node_id": "node-001",
+          "score": 0.5756045077709828,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0016",
+          "node_id": "node-014",
+          "score": 0.47893755114103065,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0017",
+          "node_id": "node-009",
+          "score": 0.6591906020023095,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0006",
+          "node_id": "node-021",
+          "score": 0.6576624883996143,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0001",
+          "node_id": "node-018",
+          "score": 0.56429842022166,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0004",
+          "node_id": "node-007",
+          "score": 0.546528173947342,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0000",
+          "node_id": "node-020",
+          "score": 0.6417611030827292,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0003",
+          "node_id": "node-016",
+          "score": 0.5070040898704155,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0018",
+          "node_id": "node-019",
+          "score": 0.43327922197293794,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0011",
+          "node_id": "node-022",
+          "score": 0.6565704422416114,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0003",
+          "node_id": "node-023",
+          "score": 0.4524676892973838,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0013",
+          "node_id": "node-006",
+          "score": 0.4741827991467895,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0002",
+          "node_id": "node-004",
+          "score": 0.5833170183959541,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0016",
+          "node_id": "node-008",
+          "score": 0.4661450864836042,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0002",
+          "node_id": "node-021",
+          "score": 0.47203735623937365,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0016",
+          "node_id": "node-009",
+          "score": 0.5778204821630867,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0005",
+          "node_id": "node-020",
+          "score": 0.566669658737327,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0003",
+          "node_id": "node-012",
+          "score": 0.38444506671614853,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0001",
+          "node_id": "node-003",
+          "score": 0.5661960345552794,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0005",
+          "node_id": "node-018",
+          "score": 0.37904462590251636,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0004",
+          "node_id": "node-022",
+          "score": 0.5576188668447204,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0012",
+          "node_id": "node-017",
+          "score": 0.36969817216155243,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0019",
+          "node_id": "node-011",
+          "score": 0.42371939950821097,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0010",
+          "node_id": "node-003",
+          "score": 0.4285232692210524,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0012",
+          "node_id": "node-002",
+          "score": 0.45335977766737745,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0017",
+          "node_id": "node-000",
+          "score": 0.5173695756913573,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0014",
+          "node_id": "node-015",
+          "score": 0.3755636160989032,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0016",
+          "node_id": "node-001",
+          "score": 0.511458817755858,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0013",
+          "node_id": "node-007",
+          "score": 0.4923536097167479,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0008",
+          "node_id": "node-004",
+          "score": 0.48746569208344975,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0013",
+          "node_id": "node-016",
+          "score": 0.368387700026916,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0018",
+          "node_id": "node-010",
+          "score": 0.3335337317284488,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0015",
+          "node_id": "node-005",
+          "score": 0.413856440790507,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0018",
+          "node_id": "node-009",
+          "score": 0.5062421207148767,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0003",
+          "node_id": "node-014",
+          "score": 0.3779384958244396,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0018",
+          "node_id": "node-007",
+          "score": 0.37651056345035033,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0003",
+          "node_id": "node-022",
+          "score": 0.3935334554537746,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0012",
+          "node_id": "node-020",
+          "score": 0.36992778587598907,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0007",
+          "node_id": "node-013",
+          "score": 0.33159057382551,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0007",
+          "node_id": "node-001",
+          "score": 0.4550234671657085,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0010",
+          "node_id": "node-000",
+          "score": 0.43211566827421394,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0011",
+          "node_id": "node-002",
+          "score": 0.3336651669203592,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0013",
+          "node_id": "node-009",
+          "score": 0.44316372024648726,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0004",
+          "node_id": "node-019",
+          "score": 0.29078926345782197,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0000",
+          "node_id": "node-008",
+          "score": 0.4140228668578141,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0006",
+          "node_id": "node-021",
+          "score": 0.41308787607558883,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0001",
+          "node_id": "node-001",
+          "score": 0.28697312252319257,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0004",
+          "node_id": "node-023",
+          "score": 0.3327021302500839,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0018",
+          "node_id": "node-006",
+          "score": 0.3997384440616314,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0007",
+          "node_id": "node-004",
+          "score": 0.4181738602217398,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0018",
+          "node_id": "node-009",
+          "score": 0.36874582117794436,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0000",
+          "node_id": "node-005",
+          "score": 0.31968898831553205,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0013",
+          "node_id": "node-008",
+          "score": 0.31070286445875506,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0015",
+          "node_id": "node-003",
+          "score": 0.36427534016550883,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0019",
+          "node_id": "node-011",
+          "score": 0.3698587816621145,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0011",
+          "node_id": "node-015",
+          "score": 0.3063568412533675,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0014",
+          "node_id": "node-000",
+          "score": 0.3587940845058657,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0013",
+          "node_id": "node-016",
+          "score": 0.31455933983862056,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0008",
+          "node_id": "node-014",
+          "score": 0.2948455787285325,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0001",
+          "node_id": "node-012",
+          "score": 0.25244700548397236,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0001",
+          "node_id": "node-021",
+          "score": 0.3611715635099788,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0017",
+          "node_id": "node-018",
+          "score": 0.2910600128350273,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0009",
+          "node_id": "node-007",
+          "score": 0.23740373715229335,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0002",
+          "node_id": "node-017",
+          "score": 0.2953947201062612,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0008",
+          "node_id": "node-004",
+          "score": 0.3589975728503892,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0009",
+          "node_id": "node-003",
+          "score": 0.27146506940083154,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0014",
+          "node_id": "node-010",
+          "score": 0.2297262517098397,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0005",
+          "node_id": "node-006",
+          "score": 0.2611048300373625,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0019",
+          "node_id": "node-020",
+          "score": 0.3216646479116674,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0005",
+          "node_id": "node-002",
+          "score": 0.2428348883880964,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0007",
+          "node_id": "node-022",
+          "score": 0.22129250500905823,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0012",
+          "node_id": "node-011",
+          "score": 0.3111644388729522,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0006",
+          "node_id": "node-015",
+          "score": 0.21811666303432048,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0006",
+          "node_id": "node-021",
+          "score": 0.2563872151167968,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0001",
+          "node_id": "node-009",
+          "score": 0.25692635249588275,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0018",
+          "node_id": "node-005",
+          "score": 0.20568619959495782,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0013",
+          "node_id": "node-023",
+          "score": 0.2935322171227457,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0008",
+          "node_id": "node-018",
+          "score": 0.19101071836616035,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0012",
+          "node_id": "node-014",
+          "score": 0.1911679909506528,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0010",
+          "node_id": "node-008",
+          "score": 0.22871990476938395,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0005",
+          "node_id": "node-000",
+          "score": 0.2956913623223293,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0009",
+          "node_id": "node-011",
+          "score": 0.21892440550856446,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0010",
+          "node_id": "node-019",
+          "score": 0.18656199630626885,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0017",
+          "node_id": "node-004",
+          "score": 0.19384423126293893,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0018",
+          "node_id": "node-020",
+          "score": 0.22496676690406808,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0009",
+          "node_id": "node-012",
+          "score": 0.16735601587978943,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0004",
+          "node_id": "node-003",
+          "score": 0.20035879413784427,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0016",
+          "node_id": "node-013",
+          "score": 0.2723063076109806,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0017",
+          "node_id": "node-010",
+          "score": 0.14824314811686,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0009",
+          "node_id": "node-023",
+          "score": 0.17313406346558283,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0012",
+          "node_id": "node-000",
+          "score": 0.19958178060937148,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0015",
+          "node_id": "node-001",
+          "score": 0.17420752862852082,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0000",
+          "node_id": "node-007",
+          "score": 0.1504901452056113,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0016",
+          "node_id": "node-009",
+          "score": 0.17441573685104858,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0011",
+          "node_id": "node-020",
+          "score": 0.12026621947678345,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0017",
+          "node_id": "node-017",
+          "score": 0.20748815143329777,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0011",
+          "node_id": "node-002",
+          "score": 0.13501399142424564,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0007",
+          "node_id": "node-006",
+          "score": 0.15824346589420882,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0008",
+          "node_id": "node-008",
+          "score": 0.1549454573053608,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0011",
+          "node_id": "node-014",
+          "score": 0.1505361070168926,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0004",
+          "node_id": "node-015",
+          "score": 0.10909827962992165,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0017",
+          "node_id": "node-021",
+          "score": 0.1461536099328108,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0005",
+          "node_id": "node-016",
+          "score": 0.28595932223432113,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0012",
+          "node_id": "node-016",
+          "score": 0.2593138775728052,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0006",
+          "node_id": "node-019",
+          "score": 0.14570058837915317,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0004",
+          "node_id": "node-013",
+          "score": 0.20454229458018217,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0019",
+          "node_id": "node-018",
+          "score": 0.10517594231531573,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0012",
+          "node_id": "node-003",
+          "score": 0.1766193345721849,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0007",
+          "node_id": "node-000",
+          "score": 0.13015676857986339,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0008",
+          "node_id": "node-011",
+          "score": 0.19014487322394785,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0000",
+          "node_id": "node-005",
+          "score": 0.12424948056917515,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0001",
+          "node_id": "node-022",
+          "score": 0.07461544375860764,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0011",
+          "node_id": "node-004",
+          "score": 0.09588065007296317,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0010",
+          "node_id": "node-003",
+          "score": 0.15510851719847352,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0014",
+          "node_id": "node-017",
+          "score": 0.13939537061867524,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0016",
+          "node_id": "node-008",
+          "score": 0.07429750283039864,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0007",
+          "node_id": "node-002",
+          "score": 0.10225443058144584,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0011",
+          "node_id": "node-011",
+          "score": 0.16492410847698233,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0010",
+          "node_id": "node-012",
+          "score": 0.06545705172442592,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0003",
+          "node_id": "node-009",
+          "score": 0.1476346926384,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0017",
+          "node_id": "node-001",
+          "score": 0.1513656849208767,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0014",
+          "node_id": "node-009",
+          "score": 0.1237556736247246,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0009",
+          "node_id": "node-023",
+          "score": 0.13382497544387809,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0019",
+          "node_id": "node-015",
+          "score": 0.05962498246496121,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0015",
+          "node_id": "node-021",
+          "score": 0.058198849972558676,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0003",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-balanced-0007",
+          "node_id": "node-015",
+          "score": 0.013193716474282456,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0008",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0008",
+          "node_id": "node-007",
+          "score": 0.09658167931048069,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0011",
+          "node_id": "node-011",
+          "score": 0.12056417129205885,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0002",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-small-balanced-0019",
+          "node_id": "node-006",
+          "score": 0.12586534373388605,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0015",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-ram_heavy-0017",
+          "node_id": "node-018",
+          "score": 0.04861682001728315,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0002",
+          "node_id": "node-021",
+          "score": 0.013095116762874484,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0010",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-balanced-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0008",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-small-ram_heavy-0003",
+          "node_id": "node-013",
+          "score": 0.1497609143980182,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        }
+      ],
+      "final_nodes": [
+        {
+          "node_id": "node-000",
+          "total_cpu": 104.92331510130455,
+          "total_ram": 68.80206500275204,
+          "used_cpu": 95.0,
+          "used_ram": 35.0
+        },
+        {
+          "node_id": "node-001",
+          "total_cpu": 81.60187637562363,
+          "total_ram": 106.85646172457396,
+          "used_cpu": 35.5,
+          "used_ram": 104.5
+        },
+        {
+          "node_id": "node-002",
+          "total_cpu": 111.1341577064968,
+          "total_ram": 193.92630158519898,
+          "used_cpu": 62.0,
+          "used_ram": 188.0
+        },
+        {
+          "node_id": "node-003",
+          "total_cpu": 121.0994923331101,
+          "total_ram": 80.69225586484791,
+          "used_cpu": 121.0,
+          "used_ram": 34.0
+        },
+        {
+          "node_id": "node-004",
+          "total_cpu": 91.00299645985731,
+          "total_ram": 69.72106613210951,
+          "used_cpu": 90.5,
+          "used_ram": 39.5
+        },
+        {
+          "node_id": "node-005",
+          "total_cpu": 77.99283038743062,
+          "total_ram": 161.02821531584559,
+          "used_cpu": 39.0,
+          "used_ram": 156.0
+        },
+        {
+          "node_id": "node-006",
+          "total_cpu": 65.69830205976727,
+          "total_ram": 102.17682893183651,
+          "used_cpu": 65.0,
+          "used_ram": 50.0
+        },
+        {
+          "node_id": "node-007",
+          "total_cpu": 105.59260401788949,
+          "total_ram": 168.62876427581762,
+          "used_cpu": 104.5,
+          "used_ram": 95.5
+        },
+        {
+          "node_id": "node-008",
+          "total_cpu": 78.10819981060459,
+          "total_ram": 177.13901130417446,
+          "used_cpu": 75.5,
+          "used_ram": 114.5
+        },
+        {
+          "node_id": "node-009",
+          "total_cpu": 115.8035492273809,
+          "total_ram": 65.24776185818772,
+          "used_cpu": 106.0,
+          "used_ram": 34.0
+        },
+        {
+          "node_id": "node-010",
+          "total_cpu": 115.57243211729971,
+          "total_ram": 198.04276383773956,
+          "used_cpu": 112.0,
+          "used_ram": 88.0
+        },
+        {
+          "node_id": "node-011",
+          "total_cpu": 85.77603305715148,
+          "total_ram": 93.85206396386207,
+          "used_cpu": 43.5,
+          "used_ram": 91.5
+        },
+        {
+          "node_id": "node-012",
+          "total_cpu": 125.261636621234,
+          "total_ram": 128.62615266162433,
+          "used_cpu": 124.5,
+          "used_ram": 85.5
+        },
+        {
+          "node_id": "node-013",
+          "total_cpu": 69.93573397632946,
+          "total_ram": 82.56954435202509,
+          "used_cpu": 69.0,
+          "used_ram": 36.0
+        },
+        {
+          "node_id": "node-014",
+          "total_cpu": 118.23963944623742,
+          "total_ram": 179.91539802244307,
+          "used_cpu": 117.0,
+          "used_ram": 78.0
+        },
+        {
+          "node_id": "node-015",
+          "total_cpu": 115.65620948956033,
+          "total_ram": 204.10850304521304,
+          "used_cpu": 109.0,
+          "used_ram": 196.0
+        },
+        {
+          "node_id": "node-016",
+          "total_cpu": 98.31859785310084,
+          "total_ram": 250.83822668403917,
+          "used_cpu": 98.0,
+          "used_ram": 62.0
+        },
+        {
+          "node_id": "node-017",
+          "total_cpu": 88.22620014133463,
+          "total_ram": 169.9918012044596,
+          "used_cpu": 87.0,
+          "used_ram": 78.0
+        },
+        {
+          "node_id": "node-018",
+          "total_cpu": 117.08189851219167,
+          "total_ram": 182.75579245393524,
+          "used_cpu": 105.5,
+          "used_ram": 144.5
+        },
+        {
+          "node_id": "node-019",
+          "total_cpu": 119.14924161988975,
+          "total_ram": 174.8516118892983,
+          "used_cpu": 117.0,
+          "used_ram": 78.0
+        },
+        {
+          "node_id": "node-020",
+          "total_cpu": 109.09259751775511,
+          "total_ram": 72.79828166188715,
+          "used_cpu": 108.5,
+          "used_ram": 36.5
+        },
+        {
+          "node_id": "node-021",
+          "total_cpu": 78.585489641699,
+          "total_ram": 119.56248901160458,
+          "used_cpu": 72.5,
+          "used_ram": 117.5
+        },
+        {
+          "node_id": "node-022",
+          "total_cpu": 69.10668652311216,
+          "total_ram": 108.6958501813178,
+          "used_cpu": 47.0,
+          "used_ram": 98.0
+        },
+        {
+          "node_id": "node-023",
+          "total_cpu": 70.46409148222267,
+          "total_ram": 117.37093179713769,
+          "used_cpu": 33.0,
+          "used_ram": 117.0
+        }
+      ],
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.8572170616069182,
+        "mean_ram_utilization": 0.66146197586169,
+        "cpu_imbalance": 0.19807963812726065,
+        "ram_imbalance": 0.2371978614788121,
+        "cpu_free_fraction_gap": 0.5641394088808888,
+        "ram_free_fraction_gap": 0.7496684043348066,
+        "cpu_dispersion": 0.83396348721991,
+        "ram_dispersion": 0.8314994738738013
+      },
+      "placed_by_size": {
+        "small": 60,
+        "large": 53,
+        "medium": 59
+      },
+      "rejected_by_size": {
+        "large": 7,
+        "medium": 1
+      },
+      "placed_by_shape": {
+        "ram_heavy": 60,
+        "balanced": 57,
+        "cpu_heavy": 55
+      },
+      "rejected_by_shape": {
+        "cpu_heavy": 5,
+        "balanced": 3
+      },
+      "placed_by_size_and_shape": {
+        "small_ram_heavy": 20,
+        "large_ram_heavy": 20,
+        "large_balanced": 18,
+        "large_cpu_heavy": 15,
+        "medium_balanced": 19,
+        "small_balanced": 20,
+        "small_cpu_heavy": 20,
+        "medium_ram_heavy": 20,
+        "medium_cpu_heavy": 20
+      },
+      "rejected_by_size_and_shape": {
+        "large_cpu_heavy": 5,
+        "large_balanced": 2,
+        "medium_balanced": 1
+      },
+      "nodes_fitting_class": {
+        "small_balanced": 7,
+        "small_cpu_heavy": 8,
+        "small_ram_heavy": 8,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 3,
+        "medium_ram_heavy": 3,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 2
+      },
+      "additional_jobs_placeable": {
+        "small_balanced": 9,
+        "small_cpu_heavy": 11,
+        "small_ram_heavy": 16,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 3,
+        "medium_ram_heavy": 3,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 2
+      }
+    },
+    "tunable-base-4": {
+      "jobs_offered": 180,
+      "jobs_placed": 175,
+      "jobs_failed": 5,
+      "score_tie_count": 0,
+      "decisions": [
+        {
+          "job_id": "job-small-ram_heavy-0009",
+          "node_id": "node-009",
+          "score": 0.11998013336662779,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0013",
+          "node_id": "node-009",
+          "score": 0.4569002384662646,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0015",
+          "node_id": "node-009",
+          "score": 0.6814870670367433,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0002",
+          "node_id": "node-004",
+          "score": 0.3903145861556772,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0013",
+          "node_id": "node-004",
+          "score": 0.66108759438218,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0016",
+          "node_id": "node-004",
+          "score": 0.8638524163768073,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0000",
+          "node_id": "node-013",
+          "score": 0.2725179295542664,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0003",
+          "node_id": "node-004",
+          "score": 0.9025898667624741,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0001",
+          "node_id": "node-013",
+          "score": 0.4890331361851506,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0019",
+          "node_id": "node-013",
+          "score": 0.7469356964706672,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0005",
+          "node_id": "node-013",
+          "score": 0.866186078227608,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0010",
+          "node_id": "node-006",
+          "score": 0.3958786894623243,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0009",
+          "node_id": "node-004",
+          "score": 0.9381439244735548,
+          "feasible_node_count": 24,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0002",
+          "node_id": "node-006",
+          "score": 0.6548511685257464,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0018",
+          "node_id": "node-013",
+          "score": 0.958724580225829,
+          "feasible_node_count": 22,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0007",
+          "node_id": "node-013",
+          "score": 0.9915608397224114,
+          "feasible_node_count": 23,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0019",
+          "node_id": "node-006",
+          "score": 0.7854915109940316,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0000",
+          "node_id": "node-006",
+          "score": 0.829519439945078,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0010",
+          "node_id": "node-006",
+          "score": 0.869527940770749,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0006",
+          "node_id": "node-000",
+          "score": 0.2499245819164059,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0015",
+          "node_id": "node-009",
+          "score": 0.7993832698817457,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0014",
+          "node_id": "node-006",
+          "score": 0.9059094012694996,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0005",
+          "node_id": "node-000",
+          "score": 0.5219410464767962,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0014",
+          "node_id": "node-000",
+          "score": 0.6502051582375117,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0001",
+          "node_id": "node-000",
+          "score": 0.7066015187873506,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0004",
+          "node_id": "node-004",
+          "score": 0.9701593290280573,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0015",
+          "node_id": "node-006",
+          "score": 0.9390167186373609,
+          "feasible_node_count": 21,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0014",
+          "node_id": "node-000",
+          "score": 0.8274034343242452,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0002",
+          "node_id": "node-000",
+          "score": 0.8611058780924893,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0006",
+          "node_id": "node-000",
+          "score": 0.8921010147749205,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0014",
+          "node_id": "node-022",
+          "score": 0.37042021447480833,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0012",
+          "node_id": "node-022",
+          "score": 0.6097026889849421,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0002",
+          "node_id": "node-000",
+          "score": 0.9353621401818032,
+          "feasible_node_count": 20,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0005",
+          "node_id": "node-022",
+          "score": 0.7233128833632317,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0004",
+          "node_id": "node-022",
+          "score": 0.8634827725292643,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0019",
+          "node_id": "node-023",
+          "score": 0.25509214986183765,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0009",
+          "node_id": "node-023",
+          "score": 0.43941553527686467,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0000",
+          "node_id": "node-023",
+          "score": 0.5849256103021693,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0015",
+          "node_id": "node-022",
+          "score": 0.9113662345595736,
+          "feasible_node_count": 19,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0000",
+          "node_id": "node-020",
+          "score": 0.3607669363560347,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0016",
+          "node_id": "node-023",
+          "score": 0.7146899436380986,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0016",
+          "node_id": "node-020",
+          "score": 0.6210794445859108,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0017",
+          "node_id": "node-023",
+          "score": 0.7579829107556341,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0006",
+          "node_id": "node-023",
+          "score": 0.7980609330415906,
+          "feasible_node_count": 18,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0001",
+          "node_id": "node-020",
+          "score": 0.7443446516140225,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0004",
+          "node_id": "node-020",
+          "score": 0.8446634414172111,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0000",
+          "node_id": "node-022",
+          "score": 0.9526987060342355,
+          "feasible_node_count": 17,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0003",
+          "node_id": "node-021",
+          "score": 0.235743821541084,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0018",
+          "node_id": "node-021",
+          "score": 0.4935527425958311,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0011",
+          "node_id": "node-021",
+          "score": 0.5483391650021426,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0003",
+          "node_id": "node-021",
+          "score": 0.7481673264461278,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0013",
+          "node_id": "node-021",
+          "score": 0.8404549850045001,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0002",
+          "node_id": "node-011",
+          "score": 0.09921601723209328,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0016",
+          "node_id": "node-011",
+          "score": 0.3160927292863536,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0002",
+          "node_id": "node-011",
+          "score": 0.48677545202230554,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0016",
+          "node_id": "node-011",
+          "score": 0.5541350475176209,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0005",
+          "node_id": "node-011",
+          "score": 0.6143529723439342,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0003",
+          "node_id": "node-011",
+          "score": 0.8055602530713258,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0001",
+          "node_id": "node-011",
+          "score": 0.844796916129409,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0005",
+          "node_id": "node-001",
+          "score": 0.34440307125179465,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0004",
+          "node_id": "node-011",
+          "score": 0.8810425284418196,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0012",
+          "node_id": "node-001",
+          "score": 0.5941450480544699,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0019",
+          "node_id": "node-011",
+          "score": 0.9603042942242994,
+          "feasible_node_count": 15,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0010",
+          "node_id": "node-001",
+          "score": 0.7026492216062211,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0012",
+          "node_id": "node-001",
+          "score": 0.8179236015896111,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0017",
+          "node_id": "node-005",
+          "score": 0.09974692576456512,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0014",
+          "node_id": "node-003",
+          "score": 0.3402827933886587,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0016",
+          "node_id": "node-000",
+          "score": 0.9727677547362141,
+          "feasible_node_count": 16,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0013",
+          "node_id": "node-003",
+          "score": 0.4057925748386462,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0008",
+          "node_id": "node-003",
+          "score": 0.4668129884737491,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0013",
+          "node_id": "node-003",
+          "score": 0.67482189923212,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0018",
+          "node_id": "node-003",
+          "score": 0.8339041997628734,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0015",
+          "node_id": "node-005",
+          "score": 0.2525729973626107,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0018",
+          "node_id": "node-003",
+          "score": 0.8668484267166313,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0003",
+          "node_id": "node-005",
+          "score": 0.41427136085519106,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0018",
+          "node_id": "node-005",
+          "score": 0.549225217056677,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0003",
+          "node_id": "node-005",
+          "score": 0.6484359806254428,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0012",
+          "node_id": "node-005",
+          "score": 0.7484888970604525,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0007",
+          "node_id": "node-003",
+          "score": 0.975424737813329,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0007",
+          "node_id": "node-001",
+          "score": 0.8569881615331014,
+          "feasible_node_count": 14,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0010",
+          "node_id": "node-005",
+          "score": 0.783795518945782,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0011",
+          "node_id": "node-005",
+          "score": 0.8915024708211616,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0013",
+          "node_id": "node-005",
+          "score": 0.921828881026619,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0004",
+          "node_id": "node-008",
+          "score": 0.2957932776196827,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0000",
+          "node_id": "node-008",
+          "score": 0.35736587090400196,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0006",
+          "node_id": "node-001",
+          "score": 0.892594010892843,
+          "feasible_node_count": 13,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0001",
+          "node_id": "node-008",
+          "score": 0.535434514077939,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0004",
+          "node_id": "node-008",
+          "score": 0.6287821602376678,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0018",
+          "node_id": "node-023",
+          "score": 0.837209889911021,
+          "feasible_node_count": 12,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0007",
+          "node_id": "node-008",
+          "score": 0.6794052334737013,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0018",
+          "node_id": "node-008",
+          "score": 0.7182145478788863,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0000",
+          "node_id": "node-008",
+          "score": 0.7911663983141223,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0013",
+          "node_id": "node-008",
+          "score": 0.8549216966808921,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0015",
+          "node_id": "node-008",
+          "score": 0.8837899606416236,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0019",
+          "node_id": "node-008",
+          "score": 0.9057382485574309,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0011",
+          "node_id": "node-008",
+          "score": 0.9557321906952021,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0014",
+          "node_id": "node-008",
+          "score": 0.978715892876675,
+          "feasible_node_count": 11,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0013",
+          "node_id": "node-017",
+          "score": 0.20641695594894127,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0008",
+          "node_id": "node-017",
+          "score": 0.35526997127595017,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0001",
+          "node_id": "node-017",
+          "score": 0.5498693959982538,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0001",
+          "node_id": "node-017",
+          "score": 0.5915549743443705,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0017",
+          "node_id": "node-017",
+          "score": 0.6825337835043964,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0009",
+          "node_id": "node-012",
+          "score": 0.2616428005359627,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0002",
+          "node_id": "node-012",
+          "score": 0.3959246780460493,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0008",
+          "node_id": "node-017",
+          "score": 0.7127040122213649,
+          "feasible_node_count": 10,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0009",
+          "node_id": "node-012",
+          "score": 0.5076626004039522,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0014",
+          "node_id": "node-012",
+          "score": 0.64986769476545,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0005",
+          "node_id": "node-012",
+          "score": 0.7209089131854336,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0019",
+          "node_id": "node-012",
+          "score": 0.746207074510385,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0005",
+          "node_id": "node-007",
+          "score": 0.22067682130400415,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0007",
+          "node_id": "node-007",
+          "score": 0.3990561403067847,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0012",
+          "node_id": "node-012",
+          "score": 0.7772511592104854,
+          "feasible_node_count": 9,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0006",
+          "node_id": "node-007",
+          "score": 0.5440497340729776,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0006",
+          "node_id": "node-007",
+          "score": 0.6208674889327446,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0001",
+          "node_id": "node-007",
+          "score": 0.7364188867948598,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0018",
+          "node_id": "node-007",
+          "score": 0.8283807741193439,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0013",
+          "node_id": "node-007",
+          "score": 0.8486186089958814,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0008",
+          "node_id": "node-019",
+          "score": 0.2086409087671909,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0012",
+          "node_id": "node-019",
+          "score": 0.4105959966040807,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0010",
+          "node_id": "node-019",
+          "score": 0.5025259330323983,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0005",
+          "node_id": "node-007",
+          "score": 0.8752868851217096,
+          "feasible_node_count": 8,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0009",
+          "node_id": "node-019",
+          "score": 0.5834270878639544,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0010",
+          "node_id": "node-019",
+          "score": 0.7195131328413691,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0017",
+          "node_id": "node-019",
+          "score": 0.8419099871179769,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0018",
+          "node_id": "node-019",
+          "score": 0.9004884400248808,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0009",
+          "node_id": "node-016",
+          "score": 0.2709246708727961,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0004",
+          "node_id": "node-016",
+          "score": 0.3926382471353187,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0016",
+          "node_id": "node-019",
+          "score": 0.9205834080616381,
+          "feasible_node_count": 7,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0017",
+          "node_id": "node-016",
+          "score": 0.5362569594292532,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0009",
+          "node_id": "node-016",
+          "score": 0.6520721920750558,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0012",
+          "node_id": "node-002",
+          "score": 0.17060445513571473,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0015",
+          "node_id": "node-016",
+          "score": 0.7180123502823031,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0000",
+          "node_id": "node-002",
+          "score": 0.37732902452033174,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0016",
+          "node_id": "node-002",
+          "score": 0.4756066014873717,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0011",
+          "node_id": "node-002",
+          "score": 0.5975629261357017,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0017",
+          "node_id": "node-016",
+          "score": 0.7757852068394756,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0011",
+          "node_id": "node-014",
+          "score": 0.23456208045097426,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0007",
+          "node_id": "node-014",
+          "score": 0.35891962053643667,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0008",
+          "node_id": "node-014",
+          "score": 0.4737304213983206,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0011",
+          "node_id": "node-014",
+          "score": 0.5679014593040366,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0004",
+          "node_id": "node-014",
+          "score": 0.6857642721704722,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0017",
+          "node_id": "node-018",
+          "score": 0.1653827926732999,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0005",
+          "node_id": "node-019",
+          "score": 0.9392236189425273,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0012",
+          "node_id": "node-019",
+          "score": 0.9568729629085855,
+          "feasible_node_count": 6,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0006",
+          "node_id": "node-018",
+          "score": 0.3002017411663102,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0004",
+          "node_id": "node-014",
+          "score": 0.7173092502051274,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0019",
+          "node_id": "node-018",
+          "score": 0.46752212496611695,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0012",
+          "node_id": "node-007",
+          "score": 0.9067523632659918,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-cpu_heavy-0007",
+          "node_id": "node-018",
+          "score": 0.5490987981088183,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0008",
+          "node_id": "node-014",
+          "score": 0.7471345552875377,
+          "feasible_node_count": 5,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0000",
+          "node_id": "node-014",
+          "score": 0.8511327775734291,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0001",
+          "node_id": "node-018",
+          "score": 0.6752117015905928,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0011",
+          "node_id": "node-010",
+          "score": 0.14867956699301685,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0010",
+          "node_id": "node-010",
+          "score": 0.20967769078264986,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0014",
+          "node_id": "node-018",
+          "score": 0.753109963399929,
+          "feasible_node_count": 4,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0016",
+          "node_id": "node-010",
+          "score": 0.378256046678072,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0007",
+          "node_id": "node-002",
+          "score": 0.6823284341467759,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0011",
+          "node_id": "node-002",
+          "score": 0.7132173165612827,
+          "feasible_node_count": 3,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0010",
+          "node_id": "node-010",
+          "score": 0.5182117036724464,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0003",
+          "node_id": "node-010",
+          "score": 0.5629336646361258,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-ram_heavy-0017",
+          "node_id": "node-010",
+          "score": 0.5928668739430002,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0014",
+          "node_id": "node-010",
+          "score": 0.6327767163443583,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0009",
+          "node_id": "node-010",
+          "score": 0.6651303778938408,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0019",
+          "node_id": "node-010",
+          "score": 0.7635738986395265,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-ram_heavy-0015",
+          "node_id": "node-010",
+          "score": 0.8455237178258334,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0003",
+          "node_id": "node-010",
+          "score": 0.9433257992261143,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0007",
+          "node_id": "node-015",
+          "score": 0.22678263935508994,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-balanced-0008",
+          "node_id": "node-015",
+          "score": 0.4125191169076931,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-ram_heavy-0008",
+          "node_id": "node-010",
+          "score": 0.9809780156856448,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-cpu_heavy-0011",
+          "node_id": "node-015",
+          "score": 0.4571142624109618,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0002",
+          "node_id": "node-015",
+          "score": 0.6030876320170133,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-small-balanced-0019",
+          "node_id": "node-015",
+          "score": 0.6338029337032065,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0015",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-ram_heavy-0017",
+          "node_id": "node-015",
+          "score": 0.7454447143774402,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0002",
+          "node_id": "node-015",
+          "score": 0.8059241650663305,
+          "feasible_node_count": 1,
+          "tied_candidate_count": 1,
+          "placed": true
+        },
+        {
+          "job_id": "job-medium-balanced-0010",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-balanced-0006",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-large-cpu_heavy-0008",
+          "node_id": null,
+          "score": null,
+          "feasible_node_count": 0,
+          "tied_candidate_count": 0,
+          "placed": false
+        },
+        {
+          "job_id": "job-small-ram_heavy-0003",
+          "node_id": "node-010",
+          "score": 0.9948490698622782,
+          "feasible_node_count": 2,
+          "tied_candidate_count": 1,
+          "placed": true
+        }
+      ],
+      "final_nodes": [
+        {
+          "node_id": "node-000",
+          "total_cpu": 104.92331510130455,
+          "total_ram": 68.80206500275204,
+          "used_cpu": 102.0,
+          "used_ram": 63.0
+        },
+        {
+          "node_id": "node-001",
+          "total_cpu": 81.60187637562363,
+          "total_ram": 106.85646172457396,
+          "used_cpu": 81.0,
+          "used_ram": 69.0
+        },
+        {
+          "node_id": "node-002",
+          "total_cpu": 111.1341577064968,
+          "total_ram": 193.92630158519898,
+          "used_cpu": 111.0,
+          "used_ram": 54.0
+        },
+        {
+          "node_id": "node-003",
+          "total_cpu": 121.0994923331101,
+          "total_ram": 80.69225586484791,
+          "used_cpu": 110.0,
+          "used_ram": 80.0
+        },
+        {
+          "node_id": "node-004",
+          "total_cpu": 91.00299645985731,
+          "total_ram": 69.72106613210951,
+          "used_cpu": 81.0,
+          "used_ram": 69.0
+        },
+        {
+          "node_id": "node-005",
+          "total_cpu": 77.99283038743062,
+          "total_ram": 161.02821531584559,
+          "used_cpu": 76.5,
+          "used_ram": 118.5
+        },
+        {
+          "node_id": "node-006",
+          "total_cpu": 65.69830205976727,
+          "total_ram": 102.17682893183651,
+          "used_cpu": 65.0,
+          "used_ram": 80.0
+        },
+        {
+          "node_id": "node-007",
+          "total_cpu": 105.59260401788949,
+          "total_ram": 168.62876427581762,
+          "used_cpu": 72.0,
+          "used_ram": 168.0
+        },
+        {
+          "node_id": "node-008",
+          "total_cpu": 78.10819981060459,
+          "total_ram": 177.13901130417446,
+          "used_cpu": 78.0,
+          "used_ram": 162.0
+        },
+        {
+          "node_id": "node-009",
+          "total_cpu": 115.8035492273809,
+          "total_ram": 65.24776185818772,
+          "used_cpu": 50.0,
+          "used_ram": 65.0
+        },
+        {
+          "node_id": "node-010",
+          "total_cpu": 115.57243211729971,
+          "total_ram": 198.04276383773956,
+          "used_cpu": 114.5,
+          "used_ram": 195.5
+        },
+        {
+          "node_id": "node-011",
+          "total_cpu": 85.77603305715148,
+          "total_ram": 93.85206396386207,
+          "used_cpu": 84.0,
+          "used_ram": 81.0
+        },
+        {
+          "node_id": "node-012",
+          "total_cpu": 125.261636621234,
+          "total_ram": 128.62615266162433,
+          "used_cpu": 125.0,
+          "used_ram": 50.0
+        },
+        {
+          "node_id": "node-013",
+          "total_cpu": 69.93573397632946,
+          "total_ram": 82.56954435202509,
+          "used_cpu": 67.5,
+          "used_ram": 82.5
+        },
+        {
+          "node_id": "node-014",
+          "total_cpu": 118.23963944623742,
+          "total_ram": 179.91539802244307,
+          "used_cpu": 116.5,
+          "used_ram": 98.5
+        },
+        {
+          "node_id": "node-015",
+          "total_cpu": 115.65620948956033,
+          "total_ram": 204.10850304521304,
+          "used_cpu": 105.5,
+          "used_ram": 99.5
+        },
+        {
+          "node_id": "node-016",
+          "total_cpu": 98.31859785310084,
+          "total_ram": 250.83822668403917,
+          "used_cpu": 97.5,
+          "used_ram": 97.5
+        },
+        {
+          "node_id": "node-017",
+          "total_cpu": 88.22620014133463,
+          "total_ram": 169.9918012044596,
+          "used_cpu": 87.0,
+          "used_ram": 48.0
+        },
+        {
+          "node_id": "node-018",
+          "total_cpu": 117.08189851219167,
+          "total_ram": 182.75579245393524,
+          "used_cpu": 117.0,
+          "used_ram": 63.0
+        },
+        {
+          "node_id": "node-019",
+          "total_cpu": 119.14924161988975,
+          "total_ram": 174.8516118892983,
+          "used_cpu": 119.0,
+          "used_ram": 146.0
+        },
+        {
+          "node_id": "node-020",
+          "total_cpu": 109.09259751775511,
+          "total_ram": 72.79828166188715,
+          "used_cpu": 57.5,
+          "used_ram": 72.5
+        },
+        {
+          "node_id": "node-021",
+          "total_cpu": 78.585489641699,
+          "total_ram": 119.56248901160458,
+          "used_cpu": 77.5,
+          "used_ram": 62.5
+        },
+        {
+          "node_id": "node-022",
+          "total_cpu": 69.10668652311216,
+          "total_ram": 108.6958501813178,
+          "used_cpu": 57.0,
+          "used_ram": 108.0
+        },
+        {
+          "node_id": "node-023",
+          "total_cpu": 70.46409148222267,
+          "total_ram": 117.37093179713769,
+          "used_cpu": 69.5,
+          "used_ram": 60.5
+        }
+      ],
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.9156351806799284,
+        "mean_ram_utilization": 0.7249308491664966,
+        "cpu_imbalance": 0.14996237474094487,
+        "ram_imbalance": 0.2605801730775987,
+        "cpu_free_fraction_gap": 0.5675348066271775,
+        "ram_free_fraction_gap": 0.7207014502684758,
+        "cpu_dispersion": 0.689494310392625,
+        "ram_dispersion": 0.858635116407963
+      },
+      "placed_by_size": {
+        "small": 60,
+        "large": 56,
+        "medium": 59
+      },
+      "rejected_by_size": {
+        "large": 4,
+        "medium": 1
+      },
+      "placed_by_shape": {
+        "ram_heavy": 60,
+        "balanced": 58,
+        "cpu_heavy": 57
+      },
+      "rejected_by_shape": {
+        "cpu_heavy": 3,
+        "balanced": 2
+      },
+      "placed_by_size_and_shape": {
+        "small_ram_heavy": 20,
+        "large_ram_heavy": 20,
+        "large_balanced": 19,
+        "large_cpu_heavy": 17,
+        "medium_balanced": 19,
+        "small_balanced": 20,
+        "small_cpu_heavy": 20,
+        "medium_ram_heavy": 20,
+        "medium_cpu_heavy": 20
+      },
+      "rejected_by_size_and_shape": {
+        "large_cpu_heavy": 3,
+        "medium_balanced": 1,
+        "large_balanced": 1
+      },
+      "nodes_fitting_class": {
+        "small_balanced": 1,
+        "small_cpu_heavy": 1,
+        "small_ram_heavy": 1,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 0,
+        "medium_ram_heavy": 1,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 1
+      },
+      "additional_jobs_placeable": {
+        "small_balanced": 2,
+        "small_cpu_heavy": 1,
+        "small_ram_heavy": 5,
+        "medium_balanced": 0,
+        "medium_cpu_heavy": 0,
+        "medium_ram_heavy": 2,
+        "large_balanced": 0,
+        "large_cpu_heavy": 0,
+        "large_ram_heavy": 1
+      }
+    }
+  }
+}

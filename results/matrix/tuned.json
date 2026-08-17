@@ -1,0 +1,46 @@
+{
+  "balance": {
+    "name": "balance_l0.8",
+    "params": {
+      "family": "balance",
+      "lam": 0.8
+    },
+    "mean_paired_delta_vs_binpack": 0.027278880645360323
+  },
+  "d_capacity": {
+    "name": "d_capacity_a0.0_b0.8_g0.2",
+    "params": {
+      "family": "d_capacity",
+      "alpha": 0.0,
+      "beta": 0.8,
+      "gamma": 0.2
+    },
+    "mean_paired_delta_vs_binpack": 0.036285534174791564
+  },
+  "d_cheap": {
+    "name": "d_cheap_a0.0_b0.8_g0.2",
+    "params": {
+      "family": "d_cheap",
+      "alpha": 0.0,
+      "beta": 0.8,
+      "gamma": 0.2
+    },
+    "mean_paired_delta_vs_binpack": 0.03692748405346985
+  },
+  "hybrid": {
+    "name": "hybrid_a0.1",
+    "params": {
+      "family": "hybrid",
+      "alpha": 0.1
+    },
+    "mean_paired_delta_vs_binpack": 0.0360001462300815
+  },
+  "wmatch": {
+    "name": "wmatch_l0.8",
+    "params": {
+      "family": "wmatch",
+      "lam": 0.8
+    },
+    "mean_paired_delta_vs_binpack": 0.0009126441603876115
+  }
+}

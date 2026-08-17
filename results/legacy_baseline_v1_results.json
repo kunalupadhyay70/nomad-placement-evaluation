@@ -1,0 +1,57 @@
+{
+  "config": {
+    "n_nodes": 24,
+    "n_jobs": 400,
+    "seed": 42
+  },
+  "policies": {
+    "binpack": {
+      "jobs_offered": 400,
+      "jobs_placed": 250,
+      "jobs_failed": 150,
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.8751830469210374,
+        "mean_ram_utilization": 0.7293163299582036,
+        "cpu_imbalance": 0.19673981732097118,
+        "ram_imbalance": 0.2562699907906556,
+        "cpu_fragmentation": 0.7685141291140181,
+        "ram_fragmentation": 0.8284967989157247
+      }
+    },
+    "spread": {
+      "jobs_offered": 400,
+      "jobs_placed": 277,
+      "jobs_failed": 123,
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.9218014369056101,
+        "mean_ram_utilization": 0.7335146796458379,
+        "cpu_imbalance": 0.17962875560578725,
+        "ram_imbalance": 0.19098563651396236,
+        "cpu_fragmentation": 0.6355440882450891,
+        "ram_fragmentation": 0.8761809723323937
+      }
+    },
+    "tunable-base-4": {
+      "jobs_offered": 400,
+      "jobs_placed": 250,
+      "jobs_failed": 150,
+      "final_metrics": {
+        "node_count": 24,
+        "active_nodes": 24,
+        "idle_nodes": 0,
+        "mean_cpu_utilization": 0.8751830469210374,
+        "mean_ram_utilization": 0.7293163299582036,
+        "cpu_imbalance": 0.19673981732097118,
+        "ram_imbalance": 0.2562699907906556,
+        "cpu_fragmentation": 0.7685141291140181,
+        "ram_fragmentation": 0.8284967989157247
+      }
+    }
+  }
+}

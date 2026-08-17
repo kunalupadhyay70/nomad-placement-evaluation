@@ -1,0 +1,4 @@
+# Runtime plotting dependency plus the test runner used by the release checks.
+matplotlib>=3.8,<4
+pytest>=8,<9
+
