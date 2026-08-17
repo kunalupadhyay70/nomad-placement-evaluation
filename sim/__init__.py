@@ -3,6 +3,16 @@ from sim.metrics import ClusterMetrics, compute_class_fit_counts, compute_metric
 from sim.models import Job, NodeState
 from sim.policies import POLICIES, Policy, binpack, make_binpack_tunable, spread
 from sim.scheduler import PlacementResult, fits, hypothetical_placement, place, run_schedule
+from sim.temporal import (
+    QUEUE_DISCIPLINE,
+    JobTimeline,
+    TemporalJob,
+    TemporalMetrics,
+    TemporalRunResult,
+    TemporalTrace,
+    run_temporal,
+)
+from sim.temporal_workload import generate_temporal_trace
 from sim.workload import (
     CANONICAL_CLASSES,
     SHAPES,
@@ -43,4 +53,12 @@ __all__ = [
     "run_policy",
     "run_experiment",
     "result_to_dict",
+    "TemporalJob",
+    "TemporalTrace",
+    "JobTimeline",
+    "TemporalMetrics",
+    "TemporalRunResult",
+    "QUEUE_DISCIPLINE",
+    "run_temporal",
+    "generate_temporal_trace",
 ]
